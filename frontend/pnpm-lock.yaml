@@ -73,12 +73,21 @@ devDependencies:
   eslint-plugin-storybook:
     specifier: ^0.8.0
     version: 0.8.0(eslint@8.56.0)(typescript@5.3.3)
+  git-format-staged:
+    specifier: ^3.0.0
+    version: 3.0.0
   husky:
-    specifier: ^9.0.11
-    version: 9.0.11
+    specifier: ^8.0.0
+    version: 8.0.3
+  husky-init:
+    specifier: ^8.0.0
+    version: 8.0.0
   lint-staged:
     specifier: ^15.2.2
     version: 15.2.2
+  prettier:
+    specifier: ^3.2.5
+    version: 3.2.5
   storybook:
     specifier: ^7.6.16
     version: 7.6.16
@@ -6094,6 +6103,11 @@ packages:
       tar: 6.2.0
     dev: true
 
+  /git-format-staged@3.0.0:
+    resolution: {integrity: sha512-cdDJxV06qY8ucBsW/uIFR4PYN/kDHl43nG8yg+VPPaDeLAf8hEPhEIJTeJ+yRClxcDSpoTmDPiFZUoxFx1wPCg==}
+    hasBin: true
+    dev: true
+
   /github-slugger@1.5.0:
     resolution: {integrity: sha512-wIh+gKBI9Nshz2o46B0B3f5k/W+WI9ZAv6y5Dn5WJ5SK1t0TnDimB4WE5rmTD05ZAIn8HALCZVmCsvj0w0v0lw==}
     dev: true
@@ -6307,9 +6321,17 @@ packages:
     engines: {node: '>=16.17.0'}
     dev: true
 
-  /husky@9.0.11:
-    resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
-    engines: {node: '>=18'}
+  /husky-init@8.0.0:
+    resolution: {integrity: sha512-P9qq7eOInj853p57QhK/QDKahx8Vd+hWWmzA+N+Q3/dsHH+DFUeRurRd6ZSFzF1Ol/6yUS+fa9yMw5Dao0pxxw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      husky: 8.0.3
+    dev: true
+
+  /husky@8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
@@ -7671,6 +7693,12 @@ packages:
   /prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /prettier@3.2.5:
+    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 

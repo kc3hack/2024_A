@@ -37,8 +37,11 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.8.0",
-    "husky": "^9.0.11",
+    "git-format-staged": "^3.0.0",
+    "husky": "^8.0.0",
+    "husky-init": "^8.0.0",
     "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
     "storybook": "^7.6.16",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
