@@ -38,3 +38,6 @@ next-env.d.ts
 
 # openapi
 api-spec.yaml
+
+# dist
+dist
