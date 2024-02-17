@@ -16,4 +16,7 @@ footer {
     justify-content: center;
     background-color: darkgrey;
     padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
