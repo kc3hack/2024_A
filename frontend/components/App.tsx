@@ -1,8 +1,22 @@
-import { useState } from "react";
-import reactLogo from "../public/react.svg";
-import viteLogo from "../public/vite.svg";
+//import { useState } from "react";
+//import reactLogo from "../public/react.svg";
+//import viteLogo from "../public/vite.svg";
 import "../styles/App.css";
+import 'leaflet/dist/leaflet.css';
+//Mapコンポーネントをインポート
+import {Map} from './Map.tsx';
 
+function App() {
+  return (
+    <div className="App">
+      <Map />
+    </div>
+  );
+}
+
+export default App;
+
+/*
 function App() {
   const [count, setCount] = useState(0);
 
@@ -31,5 +45,4 @@ function App() {
     </>
   );
 }
-
-export default App;
+*/
