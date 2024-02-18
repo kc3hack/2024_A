@@ -4,7 +4,7 @@ import "../styles/TopMenu.css";
 const TopMenu = () => {
   return (
     <nav>
-      <div className="topmenu">
+      <div className="top-menu">
         <div className="title">
           <h1>Atomosfeel</h1>
         </div>

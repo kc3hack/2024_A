@@ -1,6 +1,5 @@
 import React from "react";
-import "../styles/Footer.css";
-import BottomMenu from "./BottomMenu";
+import BottomMenu from "../components/BottomMenu";
 
 const Footer = () => {
   return (
