@@ -7,6 +7,6 @@
 
 .container {
     width: 100vw;
-    min-height: 100vh;
-    background: #e12b2b;
+    /* min-height: 100vh; */
+    background: #fff;
 }

@@ -1,22 +1,21 @@
 import React from "react";
-import styled from "@emotion/styled"
+import "../styles/Footer.css";
+// import styled from "@emotion/styled"
 
-const Button = styled.button`
-  padding: 32px;
-  background-color: hotpink;
-  font-size: 24px;
-  border-radius: 4px;
-  color: black;
-  font-weight: bold;
-  &:hover {
-    color: white;
-  }
-`
+// const Button = styled.button`
+//   padding: 32px;
+//   background-color: hotpink;
+//   font-size: 24px;
+//   border-radius: 4px;
+//   color: black;
+//   font-weight: bold;
+//   &:hover {
+//     color: white;
+//   }
+// `
 
 const Footer = () => {
-  return <footer>
-    <Button>This my button conponent.</Button>
-  </footer>;
+  return <footer>footer</footer>;
 };
 
 export default Footer;
