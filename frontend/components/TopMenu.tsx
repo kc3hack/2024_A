@@ -3,21 +3,21 @@ import "../styles/TopMenu.css";
 
 const TopMenu = () => {
   return (
-    <nav>
-      <div className="top-menu">
-        <div className="title">
-          <h1>Atomosfeel</h1>
-        </div>
-
-        <div className="search-box">
-          <input type="text" placeholder="Search" />
-        </div>
-
-        <ul>
-          <li>settings</li>
-        </ul>
+    <div className="top-menu">
+      <div className="title">
+        <h1>Atmosfeel</h1>
       </div>
-    </nav>
+      <ul className="top-menu-items">
+        <li>
+          <div className="search-box">
+            <input type="text" placeholder="Search" />
+          </div>
+        </li>
+        <li>
+          <img className="setting-icon" src="/gear-fill.svg" alt="" />
+        </li>
+      </ul>
+    </div>
   );
 };
 

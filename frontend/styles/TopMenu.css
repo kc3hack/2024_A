@@ -1,12 +1,29 @@
 .top-menu {
     display: flex;
-    align-items: center;
     justify-content: space-around;
     min-height: 8vh;
     background-color: rgb(96, 154, 216);
+    padding: 0px 10px 0px 10px;
+}
+
+.top-menu-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
 }
 
 .title {
+    align-items: center;
     color: white;
     font-size: 20px;
+}
+
+.setting-icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+.setting-icon:hover {
+    filter: brightness(0) invert(1);
 }
