@@ -1,0 +1,19 @@
+.container {
+    width: 100vw;
+    /* min-height: 100vh; */
+    background: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

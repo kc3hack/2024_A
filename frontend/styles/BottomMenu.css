@@ -1,0 +1,7 @@
+.bottommenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 8vh;
+    background-color: rgb(114, 114, 114);
+}

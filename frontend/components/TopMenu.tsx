@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/Navbar.css";
+import "../styles/TopMenu.css";
 
-const Navbar = () => {
+const TopMenu = () => {
   return (
     <nav>
-      <div className="navbar">
+      <div className="topmenu">
         <div className="title">
           <h1>Atomosfeel</h1>
         </div>
@@ -21,4 +21,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default TopMenu;

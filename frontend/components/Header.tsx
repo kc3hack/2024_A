@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import TopMenu from "../components/TopMenu";
 
 const Header = () => {
   return (
     <header>
       <div className="container">
-        <Navbar />
+        <TopMenu />
       </div>
     </header>
   );
