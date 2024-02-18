@@ -1,24 +1,30 @@
 import { useEffect, useState } from "react";
+import { io, Socket } from "socket.io-client";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
-  const [socket, setSocket] = useState<WebSocket | null>(null);
+  const [socket, setSocket] = useState<Socket | null>(null);
+
   useEffect(() => {
-    const ws = new WebSocket("wss://192.168.11.14:5173");
-    ws.onopen = () => {
-      setSocket(ws);
-    };
-    ws.onmessage = (message) => {
-      setCount(parseInt(message.data, 10));
-    };
+    const socketIO = io("https://192.168.11.14:5173");
+
+    socketIO.on("connect", () => {
+      setSocket(socketIO);
+    });
+
+    socketIO.on("message", (message) => {
+      setCount(parseInt(message, 10));
+    });
+
     return () => {
-      ws.close();
+      socketIO.disconnect();
     };
   }, []);
 
   const increment = () => {
-    if (socket && socket.readyState === WebSocket.OPEN) {
-      socket?.send((count + 1).toString());
+    if (socket && socket.connected) {
+      socket.emit("message", (count + 1).toString());
+      console.log("sent");
     }
   };
 

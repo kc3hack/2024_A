@@ -1,39 +1,37 @@
 // Node.js WebSocket サーバー
 import * as fs from 'fs';
 import * as https from 'https';
-import * as WebSocket from 'ws';
+import * as socketIO from 'socket.io';
 
 const server = https.createServer({
   cert: fs.readFileSync('certs/install.pem'),
   key: fs.readFileSync('certs/install-key.pem'),
 });
 
-const wss = new WebSocket.Server({ server });
+const io = new socketIO.Server(server, {
+  cors: {
+    origin: 'https://192.168.11.14:5174',
+    methods: ['GET', 'POST'],
+  },
+});
 
-let clients: WebSocket[] = [];
-
-wss.on('connection', (ws: WebSocket) => {
+io.on('connection', (socket) => {
   console.log('Connected');
-  clients.push(ws);
-  ws.on('message', (message: string) => {
+  socket.on('message', (message: string) => {
     const number = parseInt(message, 10);
     if (isNaN(number)) {
       console.log('Received a non-numeric message: ' + message);
       return;
     }
     console.log('Received: ' + number);
-    for (const client of clients) {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(number.toString());
-      }
-    }
+    io.emit('message', number.toString());
   });
 
-  ws.on('close', () => {
-    clients = clients.filter((client) => client !== ws);
+  socket.on('disconnect', () => {
+    console.log('Client disconnected');
   });
 });
 
 server.listen(5173, '192.168.11.14', () => {
-  console.log('Server started on https://192.168.11.14:5174');
+  console.log('Server started on https://192.168.11.14:5173');
 });
