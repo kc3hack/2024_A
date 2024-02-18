@@ -1,12 +1,21 @@
-import React from 'react'
+import React from "react";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
-    <nav className="nav">
-    <p>search</p>
-    <p>details</p>
-  </nav>
-  )
-}
+    <nav className="navbar">
+      <h1>Atomosfeel</h1>
 
-export default Navbar
+      <div className="search-box">
+        <input type="text" placeholder="Search" />
+      </div>
+
+      <ul>
+        <li>search</li>
+        <li>details</li>
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
