@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: kansai
+      MYSQL_DATABASE: kansai
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+volumes:
+  mysql-data:
