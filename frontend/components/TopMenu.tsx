@@ -10,7 +10,8 @@ const TopMenu = () => {
       <div className="top-menu-items">
         <form>
           <div className="search-bar">
-            <span className="material-symbols-outlined">search</span>
+            {/* <span className="material-symbols-outlined">search</span> */}
+            <img className="search-icon" src="search.svg" alt="" />
             <input className="search-box" type="search" placeholder="Search" />
           </div>
         </form>
