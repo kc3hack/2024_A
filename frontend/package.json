@@ -9,7 +9,11 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "cd .. && husky install frontend/.husky",
+    "stylelint": "stylelint --fix ./**/*.css",
+    "format": "pnpm prettier --write",
+    "prettier": "prettier --ignore-path vite.config.ts --config .prettierrc.json \"./**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -27,6 +31,7 @@
     "@storybook/react": "^7.6.16",
     "@storybook/react-vite": "^7.6.16",
     "@storybook/test": "^7.6.16",
+    "@stylelint/postcss-css-in-js": "^0.38.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
@@ -38,13 +43,39 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.8.0",
+    "git-format-staged": "^3.0.0",
+    "husky": "^8.0.3",
+    "husky-init": "^8.0.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
     "storybook": "^7.6.16",
+    "stylelint": "^16.2.1",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recess-order": "^4.6.0",
+    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-prettier": "^5.0.0",
+    "stylelint-scss": "^6.1.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
   },
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
     ]
   }
 }
