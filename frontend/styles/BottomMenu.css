@@ -1,8 +1,9 @@
 .bottom-menu {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     min-height: 50px;
     width: 100%;
-    background-color: rgb(114, 114, 114);
+    background: rgb(66, 66, 66);
+    color: white;
 }
