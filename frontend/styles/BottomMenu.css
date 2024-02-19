@@ -6,4 +6,13 @@
     width: 100%;
     background: rgb(66, 66, 66);
     color: white;
+    font-size: 8px;
+}
+
+.bottom-menu-element {
+    filter: brightness(0) invert(1);
+}
+
+.bottom-menu-element:hover {
+    filter: brightness(0);
 }
