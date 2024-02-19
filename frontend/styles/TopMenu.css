@@ -1,3 +1,6 @@
+/*google icon*/
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+
 .top-menu {
     display: flex;
     align-items: center;
@@ -19,8 +22,14 @@
     margin-left: auto;
 }
 
-.search-container{
+.search-bar {
+    width: max-content;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box {
 }
 
 .setting-icon {
