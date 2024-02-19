@@ -1,7 +1,7 @@
 .bottom-menu {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     min-height: 50px;
     width: 100%;
     background: rgb(66, 66, 66);
