@@ -39,6 +39,7 @@
     "storybook": "^7.6.16",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
+    
   },
   "eslintConfig": {
     "extends": [
