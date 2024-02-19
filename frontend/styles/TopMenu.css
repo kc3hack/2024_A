@@ -4,7 +4,7 @@
 .top-menu {
     display: flex;
     align-items: center;
-    height: 70px;
+    min-height: 70px;
     /* width: 100%; */
     /* gap: 30px; */
     background-color: rgb(64, 125, 190);
@@ -67,8 +67,8 @@
 }
 
 .setting-icon {
-    width: 30px;
-    padding-top: 6px;
+    width: 20px;
+    padding-top: 5px;
     cursor: pointer;
     filter: brightness(0) invert(1);
 }

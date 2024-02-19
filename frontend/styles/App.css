@@ -6,11 +6,14 @@
 
 header {
     width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 main {
+    --padding-top-menu: 70px;
+    padding-top: var(--padding-top-menu);
     background-color: antiquewhite;
-    /* height: 100vh; */
 }
 
 footer {
