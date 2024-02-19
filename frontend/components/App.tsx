@@ -4,29 +4,41 @@
 import "../styles/App.css";
 import 'leaflet/dist/leaflet.css';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {DraggableMarker} from './DraggableMarker';
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 86ac4e3bca4a9e0ee51a11bec96136ba44c88d86
 //import {DraggableMarker} from './DraggableMarker';
 import { Weather } from './weather';
 =======
 //Mapコンポーネントをインポート
 import {Map} from './Map.tsx';
 >>>>>>> parent of ec11cef (位置情報の取得とマップの表示を行う)
+<<<<<<< HEAD
 >>>>>>> 86ac4e3 (Revert "位置情報の取得とマップの表示を行う")
+=======
+>>>>>>> 86ac4e3bca4a9e0ee51a11bec96136ba44c88d86
 
 function App() {
   return (
     <div className="App">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <DraggableMarker />
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 86ac4e3bca4a9e0ee51a11bec96136ba44c88d86
       <Weather />
 =======
       <Map />
 >>>>>>> parent of ec11cef (位置情報の取得とマップの表示を行う)
+<<<<<<< HEAD
 >>>>>>> 86ac4e3 (Revert "位置情報の取得とマップの表示を行う")
+=======
+>>>>>>> 86ac4e3bca4a9e0ee51a11bec96136ba44c88d86
     </div>
   );
 }
