@@ -30,7 +30,7 @@ export const Weather = () => {
   }, []);
 
   const fetchWeather = async (latitude, longitude) => {
-    const apiKey = '7bbac290c2908e298bfc731fbd9b08f0'; // OpenWeatherMap API key
+    const apiKey = 'API'; // OpenWeatherMap API key
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     try {
       setLoading(true);
