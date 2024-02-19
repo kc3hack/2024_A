@@ -1,4 +1,4 @@
-import "../styles/App.css";
+import "../styles/design.css";
 import { useEffect } from 'react';
 
 let nowMode = 0;
@@ -90,6 +90,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div className="bg_pattern Diagonal"></div>
+        <div id='page'>
+          <button id="research">キーワードから検索</button>
+          <button id="searchByWeather">天気から検索</button>
+          <button id="searchByAddress">地域から検索</button>
+        </div>
         <div id='test'>
           <input id="name" placeholder="曲名"></input>
           <input id="local" placeholder="地区"></input>
@@ -101,12 +107,6 @@ function App() {
           <button id="btn">test</button>
           <h1 id='resultArea'></h1>
           <ul id="fileList"></ul>
-        </div>
-        <div className="bg_pattern Diagonal"></div>
-        <div id='page'>
-          <button id="research">キーワードから検索</button>
-          <button id="searchByWeather">天気から検索</button>
-          <button id="searchByAddress">地域から検索</button>
         </div>
       </header>
     </div>

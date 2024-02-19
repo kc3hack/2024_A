@@ -1,0 +1,17 @@
+.bg_pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffe9a7;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  .Diagonal {
+    background: repeating-linear-gradient( 45deg, #ffc107, #ffc107 10px, #ffe9a7 10px, #ffe9a7 50px );
+  }
+   #CategorySelect{
+    padding-left: 10%;
+  } 
+  
