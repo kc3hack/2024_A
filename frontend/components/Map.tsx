@@ -6,7 +6,7 @@ export const Map = () => {
   // 緯度軽度
   const position = [51.505, -0.09];
   // 初期マップズームレベル
-  const zoom = 13;
+  const zoom = 18;
   return (
     <MapContainer center={position} zoom={zoom}>
       <TileLayer
