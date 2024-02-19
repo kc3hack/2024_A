@@ -10,6 +10,7 @@
 }
 
 .bottom-menu-element {
+    text-align: center;
     filter: brightness(0) invert(1);
 }
 
