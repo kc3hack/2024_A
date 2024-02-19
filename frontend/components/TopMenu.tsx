@@ -8,8 +8,11 @@ const TopMenu = () => {
         <h1>Atmosfeel</h1>
       </div>
       <div className="top-menu-items">
-        <div className="search-box">
-          <input type="text" placeholder="Search" />
+        <div className="search-container">
+          <img src="/search.svg" alt="" className="search-icon" />
+          <div className="search-box">
+            <input type="text" placeholder="Search" />
+          </div>
         </div>
         <div>
           <img className="setting-icon" src="/gear-fill.svg" alt="" />

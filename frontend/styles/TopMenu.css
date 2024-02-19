@@ -19,6 +19,10 @@
     margin-left: auto;
 }
 
+.search-container{
+    display: flex;
+}
+
 .setting-icon {
     width: 30px;
     padding-top: 6px;
