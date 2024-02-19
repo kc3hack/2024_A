@@ -1,0 +1,5 @@
+.top {
+    background-color: rgb(235, 148, 148);
+    width: 50%;
+    height: calc(100vh - 120px);;
+}

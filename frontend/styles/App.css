@@ -11,6 +11,7 @@ header {
 }
 
 main {
+    display: flex;
     --padding-top-menu: 70px;
     padding-top: var(--padding-top-menu);
     background-color: white;
