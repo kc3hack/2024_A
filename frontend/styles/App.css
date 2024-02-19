@@ -1,19 +1,22 @@
-.container {
-    width: 100vw;
+/* .container { */
+    /* width: 100vw; */
     /* min-height: 100vh; */
-    background: #ffffff;
-}
+    /* background: #ffffff; */
+/* } */
 
 header {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    /* width: 100%; */
+}
+
+main {
+    background-color: antiquewhite;
+    /* height: 100vh; */
 }
 
 footer {
     display: flex;
     justify-content: center;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }

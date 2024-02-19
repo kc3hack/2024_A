@@ -4,9 +4,7 @@ import TopMenu from "../components/TopMenu";
 const Header = () => {
   return (
     <header>
-      <div className="container">
-        <TopMenu />
-      </div>
+      <TopMenu />
     </header>
   );
 };

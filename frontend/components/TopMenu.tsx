@@ -7,16 +7,14 @@ const TopMenu = () => {
       <div className="title">
         <h1>Atmosfeel</h1>
       </div>
-      <ul className="top-menu-items">
-        <li>
-          <div className="search-box">
-            <input type="text" placeholder="Search" />
-          </div>
-        </li>
-        <li>
+      <div className="top-menu-items">
+        <div className="search-box">
+          <input type="text" placeholder="Search" />
+        </div>
+        <div>
           <img className="setting-icon" src="/gear-fill.svg" alt="" />
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   );
 };
