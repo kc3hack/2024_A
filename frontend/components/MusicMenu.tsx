@@ -5,8 +5,7 @@ const MusicMenu = () => {
   return (
     <div className="music-menu">
       <div className="music-menu-element">
-        MusicTitle <br />
-        Artist
+        <div className="music-description">MusicTitle</div>
       </div>
       <div className="music-menu-element">
         <div className="music-menu-buttons">
@@ -23,7 +22,9 @@ const MusicMenu = () => {
           />
         </div>
       </div>
-      <div className="music-menu-element">VolumeControl</div>
+      <div className="music-menu-element">
+        <div className="music-volume">Volume</div>
+      </div>
     </div>
   );
 };
