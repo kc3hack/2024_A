@@ -12,7 +12,6 @@ header {
 }
 
 main {
-    --padding-top-menu: 70px;
     padding-top: var(--padding-top-menu);
     background-color: white;
 }

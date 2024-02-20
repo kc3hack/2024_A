@@ -1,0 +1,7 @@
+.value {
+    position: relative;
+    margin-top: var(--map-min-height);
+    min-height: var(--value-min-height);
+    width: 100%;
+    background-color:chocolate;
+}

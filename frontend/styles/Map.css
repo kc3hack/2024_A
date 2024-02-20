@@ -1,10 +1,20 @@
 .map {
-    width: 100%;
     position: relative;
-    background-color: white;
+    width: 100%;
 }
 
 .map-background {
-    min-height: calc(100vh - 120px);
+    position: absolute;
+    width: 100%;
+    min-height: var(--map-min-height);
+    /* height: calc(100vh - 120px); */
     background-color: aquamarine;
+}
+
+.map-main {
+    position: absolute;
+    margin-left: 20%;
+    width: 60%;
+    min-height: var(--map-min-height);
+    background-color: blueviolet;
 }
