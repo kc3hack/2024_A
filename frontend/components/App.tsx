@@ -6,12 +6,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Test />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/test/" element={<Test />}></Route>
       </Routes>
     </BrowserRouter>
   );
 };
 
+/*テスト用ページ */
 const Test = () => {
   return (
     <div>
