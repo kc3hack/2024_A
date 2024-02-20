@@ -1,5 +1,10 @@
 .map {
+    width: 100%;
+    position: relative;
+    background-color: white;
+}
+
+.map-background {
+    min-height: calc(100vh - 120px);
     background-color: aquamarine;
-    width: 50%;
-    height: calc(100vh - 120px);
 }

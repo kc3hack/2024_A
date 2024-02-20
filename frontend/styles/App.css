@@ -8,10 +8,10 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 main {
-    display: flex;
     --padding-top-menu: 70px;
     padding-top: var(--padding-top-menu);
     background-color: white;
