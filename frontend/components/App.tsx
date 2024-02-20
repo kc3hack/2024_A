@@ -3,6 +3,7 @@ import reactLogo from "/react.svg";
 import viteLogo from "/vite.svg";
 import "../styles/App.css";
 import Counter from "../api-client/test";
+import Express from "../api-client/express";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,6 +31,10 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <Counter />
+      <div>
+        <h1>Locations</h1>
+        <Express />
+      </div>
     </>
   );
 }

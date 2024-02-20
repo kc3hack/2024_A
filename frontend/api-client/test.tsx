@@ -6,7 +6,7 @@ const Counter = () => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const socketIO = io("https://192.168.11.14:5173");
+    const socketIO = io("https://192.168.11.14:5174");
 
     socketIO.on("connect", () => {
       setSocket(socketIO);

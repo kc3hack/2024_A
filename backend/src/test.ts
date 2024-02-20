@@ -10,7 +10,7 @@ const server = https.createServer({
 
 const io = new socketIO.Server(server, {
   cors: {
-    origin: 'https://192.168.11.14:5174',
+    origin: 'https://192.168.11.14:5173',
     methods: ['GET', 'POST'],
   },
 });
@@ -32,6 +32,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(5173, '192.168.11.14', () => {
+server.listen(5174, '192.168.11.14', () => {
   console.log('Server started on https://192.168.11.14:5173');
 });
