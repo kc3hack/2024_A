@@ -2,4 +2,12 @@
     min-height: 50px;
     background-color: rgb(66, 66, 66);
     border-bottom: solid 1px rgb(88, 88, 88);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.music-menu-element {
+    text-align: center;
 }
