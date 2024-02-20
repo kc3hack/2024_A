@@ -13,3 +13,14 @@
 .leaflet-popup-content {
   margin: 8px 12px; /* ポップアップ内のコンテンツとの余白 */
 }
+
+.map {
+  position: relative;
+}
+
+.handleReturnToCurrentPosition {
+  position: absolute;
+  left: center;
+  top: 50px;
+  z-index: 1000;
+}
