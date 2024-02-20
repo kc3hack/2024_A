@@ -25,9 +25,10 @@ const MusicMenu = () => {
         <img src="/volume-up.svg" alt="" className="volume-icon" />
         <input
           type="range"
-          name="volume-bar"
+          id="volume-bar"
           min="0"
           max="100"
+          //   value="50"
           className="volume-bar"
         ></input>
       </div>
