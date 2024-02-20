@@ -96,4 +96,22 @@ const MusicPlayer: React.FC = () => {
   );
 };
 
+function search(name:string,songData:Record<string, Song>) {
+    var returndata:string="";
+    for (const key in songData) {
+        if (Object.prototype.hasOwnProperty.call(songData, key)) {
+            const element = songData[key];
+            if (element.title.indexOf(name)>=0) {
+                if (returndata=="") {
+                    returndata=key;
+                }else{
+                    returndata+=","+key;
+                }
+            }
+        }
+    }
+    console.log(returndata);
+    return returndata;
+}
+search("Glowing_Moon",musicLibrary);
 export default MusicPlayer;
