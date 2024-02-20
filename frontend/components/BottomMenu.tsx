@@ -22,7 +22,7 @@ const BottomMenu = () => {
         <div className="music">
           <img src="/disc.svg" alt="" className="music-button" />
           <br />
-          <span>ミュージック</span>
+          <span>履歴</span>
         </div>
       </div>
     </div>
