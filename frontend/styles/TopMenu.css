@@ -66,6 +66,10 @@
     width: 20px;
 }
 
+.hidden-search-bar {
+    display: none;
+}
+
 .setting-icon {
     width: 20px;
     padding-top: 5px;
@@ -76,3 +80,28 @@
 .setting-icon:hover {
     filter: brightness(0);
 } 
+
+@media screen and (max-width: 650px) {
+    .search-bar {
+        display: none;
+    }
+
+    .top-menu-items {
+        gap: 10px;
+    }
+
+    .hidden-search-bar {
+        display: block;
+    }
+
+    .hidden-search-bar .search-icon {
+        width: 24px;
+        padding-top: 7px;
+        cursor: pointer;
+        filter: brightness(0) invert(1);
+    }
+
+    .hidden-search-bar .search-icon:hover {
+        filter: brightness(0);
+    }
+}
