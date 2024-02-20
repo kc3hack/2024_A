@@ -1,6 +1,10 @@
 import React from "react";
 import "../styles/TopMenu.css";
 
+const Click = () => {
+  alert("Hello World");
+};
+
 const TopMenu = () => {
   return (
     <div className="top-menu">
@@ -9,7 +13,12 @@ const TopMenu = () => {
       </div>
       <div className="top-menu-items">
         <div className="hidden-search-bar">
-          <img className="search-icon" src="search.svg" alt="" />
+          <img
+            className="search-icon"
+            src="search.svg"
+            alt=""
+            onClick={Click}
+          />
         </div>
         <form>
           <div className="search-bar">
