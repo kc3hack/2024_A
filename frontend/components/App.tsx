@@ -1,16 +1,12 @@
-import Header from "../components/Header"
-import Main from "../components/Main"
-import Footer from "../components/Footer"
+import Home from "../pages/Home";
 import "../styles/App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+    <div className="Home">
+      <Home />
     </div>
-  )
+  );
 }
 
 export default App;

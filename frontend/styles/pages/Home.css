@@ -1,0 +1,25 @@
+/* .top {
+    background-color: rgb(235, 148, 148);
+    width: 60%;
+    height: calc(100vh - 120px);;
+} */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+main {
+    padding-top: var(--padding-top-menu);
+    background-color: white;
+}
+
+footer {
+    /* display: flex; */
+    /* justify-content: center; */
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

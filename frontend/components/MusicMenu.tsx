@@ -28,7 +28,6 @@ const MusicMenu = () => {
           id="volume-bar"
           min="0"
           max="100"
-          //   value="50"
           className="volume-bar"
         ></input>
       </div>
