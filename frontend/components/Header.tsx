@@ -1,4 +1,3 @@
-import React from "react";
 import TopMenu from "../components/TopMenu";
 
 const Header = () => {
