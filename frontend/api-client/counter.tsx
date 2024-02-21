@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react";
 import { io, Socket } from "socket.io-client";
-import { getIPAddresses } from "../utils/get-ipaddress";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
   const [socket, setSocket] = useState<Socket | null>(null);
 
-  const ipAddresses = getIPAddresses();
-  if (ipAddresses.length === 0)
-    throw new Error("IPアドレスが見つかりませんでした。");
-  const ip = ipAddresses[0];
-
   useEffect(() => {
-    const socketIO = io(`https://${ip}:5174`, {
+    const socketIO = io(`https://192.168.11.14:5174`, {
       withCredentials: true,
     });
 
