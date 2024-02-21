@@ -1,39 +1,39 @@
 /*roboto from google fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "roboto", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "roboto", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
     "Hiragino Sans", "Noto Sans", Meiryo, sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  font-weight: 400;
+  font-style: normal;
 
-    /* ヘッダーの高さ */
-    --padding-top-menu: 70px;
-    /* 地図画面の高さ */
-    --map-min-height: 400px;
-    /* パラメーターの高さ */
-    --value-min-height: 400px;
-    /* フッターの高さ */
-    --value-bottom-margin: 100px;
+  /* ヘッダーの高さ */
+  --padding-top-menu: 70px;
+  /* 地図画面の高さ */
+  --map-min-height: 400px;
+  /* パラメーターの高さ */
+  --value-min-height: 400px;
+  /* フッターの高さ */
+  --value-bottom-margin: 100px;
 }
 
 header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 main {
-    padding-top: var(--padding-top-menu);
-    background-color: white;
+  padding-top: var(--padding-top-menu);
+  background-color: white;
 }
 
 footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
