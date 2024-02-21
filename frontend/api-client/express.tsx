@@ -11,7 +11,7 @@ function Express() {
   const [locations, setLocations] = useState<Location[]>([]);
 
   useEffect(() => {
-    fetch("https://192.168.11.14:3000/locations")
+    fetch("https://192.168.11.14:3000/get-all-locations")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
