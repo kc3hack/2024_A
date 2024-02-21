@@ -1,39 +1,41 @@
-//import { useEffect, useRef ,useState} from 'react';
+/* eslint-disable no-var */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React from "react";
 
 // 音楽データの型定義
 interface Song {
   file: string;
   title: string;
   information: Array<number>;
-  id:number;
+  id: number;
 }
-let history:number[]=[]
+let history: number[] = [];
 // サンプルの音楽データ
 const musicData: Song[] = [
   {
-    file: "../public/PressEnter.mp3",
+    file: "../PressEnter.mp3",
     title: "PressEnter",
     information: [1, 2, 3, 4, 5],
-    id:0
+    id: 0,
   },
   {
-    file: "../public/Glowing_Moon.mp3",
+    file: "../Glowing_Moon.mp3",
     title: "Glowing_Moon",
     information: [2, 2, 3, 4, 5],
-    id:1
+    id: 1,
   },
   {
-    file: "../public/Awayuki.mp3",
+    file: "../Awayuki.mp3",
     title: "Awayuki",
     information: [4, 2, 3, 4, 8],
-    id:2
+    id: 2,
   },
   {
-    file: "../public/Conjurer.mp3",
+    file: "../Conjurer.mp3",
     title: "Conjurer",
     information: [7, 2, 6, 1, 5],
-    id:3
-  }
+    id: 3,
+  },
 ];
 
 // タイトルにキーワードが含まれる曲を検索する関数
@@ -49,8 +51,6 @@ function search(data: Song[], keyWord: string): number[] {
 }
 
 //console.log(search(musicData, "e"))//試しに作ったやつ
-;
-
 // パラメーターに基づいて曲を検索し、類似度でソートする関数
 function searchByInformation(data: Song[], parameters: Array<number>) {
   interface preResultData {
@@ -68,7 +68,7 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
       point: 0,
       file: element.file,
       title: element.title,
-      information: element.information
+      information: element.information,
     };
     resultdata.push(a);
   }
@@ -90,9 +90,8 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
 // パラメーター [3, 2, 3, 4, 5] で曲を検索し、類似度でソート
 //console.log(searchByInformation(musicData, [3, 2, 3, 4, 5]));
 
-
 function historySort() {
-    history = removeDuplicates(history);
+  history = removeDuplicates(history);
 }
 function removeDuplicates(arr: number[]): number[] {
   return arr.filter((value, index, self) => self.indexOf(value) === index);
@@ -100,14 +99,14 @@ function removeDuplicates(arr: number[]): number[] {
 
 // React コンポーネント
 function App() {
-    return (
+  return (
+    <div>
       <div>
-        <div>
-          <h2>検索用</h2>
-        </div>
+        <h2>検索用</h2>
       </div>
-    );
-  }
+    </div>
+  );
+}
 export default App;
 /* history.unshift(id);曲のidを変数に入れると保存される。
 function historySort():被りを消す
