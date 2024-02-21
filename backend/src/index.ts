@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client';
 import './server';
-import './debug';
 const prisma = new PrismaClient();
 
 async function main() {
