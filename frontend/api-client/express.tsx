@@ -1,23 +1,42 @@
-// Express.tsx
+// App.tsx
 import { useEffect, useState } from "react";
 
+interface Location {
+  id: number;
+  long: string;
+  lat: string;
+}
+
 function Express() {
-  const [locations, setLocations] = useState<{ id: number; name: string }[]>(
-    [],
-  );
+  const [locations, setLocations] = useState<Location[]>([]);
 
   useEffect(() => {
-    fetch(`https://192.168.11.14:3000/locations`)
-      .then((response) => response.json())
-      .then(setLocations);
+    fetch("https://192.168.11.14:3000/locations")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then(setLocations)
+      .catch((error) => {
+        console.error(
+          "There has been a problem with your fetch operation:",
+          error,
+        );
+      });
   }, []);
 
   return (
-    <ul>
+    <div>
       {locations.map((location) => (
-        <li key={location.id}>{location.name}</li>
+        <div key={location.id}>
+          <p>id: {location.id}</p>
+          <p>Longitude: {location.long}</p>
+          <p>Latitude: {location.lat}</p>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 

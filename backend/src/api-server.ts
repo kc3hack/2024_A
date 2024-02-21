@@ -11,8 +11,9 @@ const server = https.createServer({
 
 const io = new socketIO.Server(server, {
   cors: {
-    origin: '*',
+    origin: 'https://192.168.11.14:5173',
     methods: ['GET', 'POST'],
+    credentials: true,
   },
 });
 
