@@ -9,7 +9,7 @@ const BottomMenu = () => {
           <Link to="/location">
             <img src="/math-plus.svg" alt="" className="add-music-button" />
             <br />
-            <span>追加</span>
+            <span>地点の追加</span>
           </Link>
         </div>
       </div>

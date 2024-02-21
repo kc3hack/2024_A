@@ -4,8 +4,8 @@ const MusicMenu = () => {
   return (
     <div className="music-menu">
       <div className="music-description">
-        MusicTitle <br />
-        Artist
+        曲名を表示する <br />
+        アーティスト名を表示する
       </div>
       <div className="music-menu-buttons">
         <img
