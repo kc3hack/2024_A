@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+cd backend &&
+  pnpm lint &&
+  pnpm stylelint &&
+  pnpm prettier --write &&
+  pnpm prettier -l
