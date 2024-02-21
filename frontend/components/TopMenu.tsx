@@ -1,6 +1,6 @@
 import "../styles/TopMenu.css";
 
-const Click = () => {
+const TestClick = () => {
   alert("検索アイコンを押すと検索バーを表示するようにする");
 };
 
@@ -16,7 +16,7 @@ const TopMenu = () => {
             className="search-icon"
             src="search.svg"
             alt=""
-            onClick={Click}
+            onClick={TestClick}
           />
         </div>
         <form>
