@@ -1,0 +1,46 @@
+.music-menu {
+  align-items: center;
+  background-color: rgb(66, 66, 66);
+  border-bottom: solid 1px rgb(88, 88, 88);
+  color: white;
+  display: flex;
+  max-height: 50px;
+  min-height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.music-description {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  width: 40%;
+}
+
+.music-menu-buttons {
+  display: flex;
+
+  filter: brightness(0) invert(1);
+  justify-content: center;
+  margin-left: 40%;
+  position: absolute;
+  width: 20%;
+}
+
+.music-volume-control {
+  display: flex;
+  justify-content: center;
+  margin-left: 60%;
+  position: absolute;
+  width: 40%;
+}
+
+.play-track-button {
+  width: 60px;
+}
+
+.volume-icon {
+  filter: brightness(0) invert(1);
+  width: 30px;
+}

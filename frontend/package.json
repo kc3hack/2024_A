@@ -28,7 +28,8 @@
     "react-leaflet": "^4.2.1",
     "socket.io": "^4.7.4",
     "socket.io-client": "^4.7.4",
-    "vite-plugin-inspect": "^0.8.3"
+    "vite-plugin-inspect": "^0.8.3",
+    "react-router-dom": "^6.22.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.16",
