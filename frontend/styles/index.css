@@ -10,9 +10,13 @@
     font-weight: 400;
     font-style: normal;
 
+    /* ヘッダーの高さ */
     --padding-top-menu: 70px;
+    /* 地図画面の高さ */
     --map-min-height: 400px;
+    /* パラメーターの高さ */
     --value-min-height: 400px;
+    /* フッターの高さ */
     --value-bottom-margin: 100px;
 }
 
