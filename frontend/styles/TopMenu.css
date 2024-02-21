@@ -1,101 +1,101 @@
 .top-menu {
-    display: flex;
-    align-items: center;
-    min-height: 70px;
-    background-color: rgb(64, 125, 190);
+  align-items: center;
+  background-color: rgb(64, 125, 190);
+  display: flex;
+  min-height: 70px;
 }
 
 .title {
-    color: white;
-    font-size: 20px;
-    margin-left: 30px;
-} 
+  color: white;
+  font-size: 20px;
+  margin-left: 30px;
+}
 
 .top-menu-items {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-right: 30px;
-    margin-left: auto;
+  align-items: center;
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+  margin-right: 30px;
 }
 
 .search-bar {
-    --padding: 8px;
+  --padding: 8px;
+  align-items: center;
+  background: #f6f6f6;
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  padding: var(--padding);
 
-    width: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--padding);
-    border-radius: 28px;
-    background: #f6f6f6;
-    width: 300px;
+  width: max-content;
+  width: 300px;
 }
 
 .search-box {
-    font-size: 16px;
-    color: #333333;
-    margin-left: var(--padding);
-    outline: none;
-    border: none;
-    background: transparent;
-    flex: 1;
+  background: transparent;
+  border: none;
+  color: #333333;
+  flex: 1;
+  font-size: 16px;
+  margin-left: var(--padding);
+  outline: none;
 }
 
-.search-box[type="search"]::-webkit-search-cancel-button {   
-    height: 16px;
-    width: 16px;
+.search-box[type="search"]::-webkit-search-cancel-button {
+  height: 16px;
+  width: 16px;
 }
 
-.search-box::-webkit-search-cancel-button {    
-    -webkit-appearance: none;
-    cursor:pointer;
-    background-image: url(/close.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-right: 0px;
+.search-box::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  background-image: url(/close.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  padding-right: 0px;
 }
 
 .search-icon {
-    width: 20px;
+  width: 20px;
 }
 
 .hidden-search-bar {
-    display: none;
+  display: none;
 }
 
 .setting-icon {
-    width: 20px;
-    padding-top: 5px;
-    cursor: pointer;
-    filter: brightness(0) invert(1);
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+  padding-top: 5px;
+  width: 20px;
 }
 
 .setting-icon:hover {
-    filter: brightness(0);
-} 
+  filter: brightness(0);
+}
 
 @media screen and (max-width: 650px) {
-    .search-bar {
-        display: none;
-    }
+  .search-bar {
+    display: none;
+  }
 
-    .top-menu-items {
-        gap: 10px;
-    }
+  .top-menu-items {
+    gap: 10px;
+  }
 
-    .hidden-search-bar {
-        display: block;
-    }
+  .hidden-search-bar {
+    display: block;
+  }
 
-    .hidden-search-bar .search-icon {
-        width: 24px;
-        padding-top: 7px;
-        cursor: pointer;
-        filter: brightness(0) invert(1);
-    }
+  .hidden-search-bar .search-icon {
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    padding-top: 7px;
+    width: 24px;
+  }
 
-    .hidden-search-bar .search-icon:hover {
-        filter: brightness(0);
-    }
+  .hidden-search-bar .search-icon:hover {
+    filter: brightness(0);
+  }
 }

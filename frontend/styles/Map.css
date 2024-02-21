@@ -1,19 +1,19 @@
 .map {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .map-background {
-    position: absolute;
-    width: 100%;
-    min-height: var(--map-min-height);
-    background-color: aquamarine;
+  background-color: aquamarine;
+  min-height: var(--map-min-height);
+  position: absolute;
+  width: 100%;
 }
 
 .map-main {
-    position: absolute;
-    margin-left: 20%;
-    width: 60%;
-    min-height: var(--map-min-height);
-    background-color: blueviolet;
+  background-color: blueviolet;
+  margin-left: 20%;
+  min-height: var(--map-min-height);
+  position: absolute;
+  width: 60%;
 }

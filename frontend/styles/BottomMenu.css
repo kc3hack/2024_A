@@ -1,19 +1,19 @@
 .bottom-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    min-height: 50px;
-    width: 100%;
-    background: rgb(66, 66, 66);
-    color: white;
-    font-size: 8px;
+  align-items: center;
+  background: rgb(66, 66, 66);
+  color: white;
+  display: flex;
+  font-size: 8px;
+  justify-content: space-around;
+  min-height: 50px;
+  width: 100%;
 }
 
 .bottom-menu-element {
-    text-align: center;
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+  text-align: center;
 }
 
 .bottom-menu-element:hover {
-    filter: brightness(0);
+  filter: brightness(0);
 }

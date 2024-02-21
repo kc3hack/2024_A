@@ -1,8 +1,8 @@
 .value {
-    position: relative;
-    margin-top: var(--map-min-height);
-    min-height: var(--value-min-height);
-    margin-bottom: var(--value-bottom-margin);
-    width: 100%;
-    background-color:chocolate;
+  background-color: chocolate;
+  margin-bottom: var(--value-bottom-margin);
+  margin-top: var(--map-min-height);
+  min-height: var(--value-min-height);
+  position: relative;
+  width: 100%;
 }
