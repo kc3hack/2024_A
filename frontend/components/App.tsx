@@ -9,20 +9,10 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/test/" element={<Test />}></Route>
         <Route path="/history/" element={<History />}></Route>
         <Route path="/location/" element={<Location />}></Route>
       </Routes>
     </BrowserRouter>
-  );
-};
-
-/*テスト用ページ */
-const Test = () => {
-  return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
   );
 };
 
