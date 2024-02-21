@@ -1,7 +1,7 @@
 import "../styles/TopMenu.css";
 
 const Click = () => {
-  alert("Hello World");
+  alert("検索アイコンを押すと検索バーを表示するようにする");
 };
 
 const TopMenu = () => {
