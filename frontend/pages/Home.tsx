@@ -1,16 +1,17 @@
 import React from "react";
 import Header from "../components/Header";
-import Main from "../components/Main";
+import Map from "../components/Map";
+import Value from "../components/Value";
 import Footer from "../components/Footer";
-// import "../styles/pages/Home.css";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <Header />
-      <Main />
+      <Map />
+      <Value />
       <Footer />
-    </div>
+    </main>
   );
 };
 
