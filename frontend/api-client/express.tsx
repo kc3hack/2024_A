@@ -1,31 +1,29 @@
-// App.tsx
+// Express.tsx
 import { useEffect, useState } from "react";
-
-interface Location {
-  id: number;
-  long: string;
-  lat: string;
-}
+import { getIPAddresses } from "../utils/get-ipaddress";
 
 function Express() {
-  const [locations, setLocations] = useState<Location[]>([]);
+  const [locations, setLocations] = useState<{ id: number; name: string }[]>(
+    [],
+  );
+
+  const ipAddresses = getIPAddresses();
+  if (ipAddresses.length === 0)
+    throw new Error("IPアドレスが見つかりませんでした。");
+  const ip = ipAddresses[0];
 
   useEffect(() => {
-    fetch("https://192.168.11.14:3000/locations")
+    fetch(`https://${ip}:3000/locations`)
       .then((response) => response.json())
       .then(setLocations);
   }, []);
 
   return (
-    <div>
+    <ul>
       {locations.map((location) => (
-        <div key={location.id}>
-          <p>id: {location.id}</p>
-          <p>Longitude: {location.long}</p>
-          <p>Latitude: {location.lat}</p>
-        </div>
+        <li key={location.id}>{location.name}</li>
       ))}
-    </div>
+    </ul>
   );
 }
 

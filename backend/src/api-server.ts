@@ -2,15 +2,16 @@
 import * as fs from 'fs';
 import * as https from 'https';
 import * as socketIO from 'socket.io';
+import { getIPAddresses } from './utils/get-ipaddress';
 
 const server = https.createServer({
-  cert: fs.readFileSync('certs/install.pem'),
-  key: fs.readFileSync('certs/install-key.pem'),
+  cert: fs.readFileSync('../certs/kansai.local.pem'),
+  key: fs.readFileSync('../certs/kansai.local-key.pem'),
 });
 
 const io = new socketIO.Server(server, {
   cors: {
-    origin: 'https://192.168.11.14:5173',
+    origin: '*',
     methods: ['GET', 'POST'],
   },
 });
@@ -32,6 +33,13 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(5174, '192.168.11.14', () => {
-  console.log('Server started on https://192.168.11.14:5173');
-});
+// 動的にIPアドレスを取得します。
+const ipAddresses = getIPAddresses();
+if (ipAddresses.length > 0) {
+  const ip = ipAddresses[0]; // 複数のIPアドレスがある場合は、最初のものを使用します。
+  server.listen(5174, ip, () => {
+    console.log(`Server started on https://${ip}:5174`);
+  });
+} else {
+  console.log('No available IP address found');
+}

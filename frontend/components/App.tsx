@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "/react.svg";
 import viteLogo from "/vite.svg";
 import "../styles/App.css";
-import Counter from "../api-client/test";
+import Counter from "../api-client/counter";
 import Express from "../api-client/express";
 
 function App() {

@@ -4,7 +4,6 @@ import { PrismaClient } from '@prisma/client';
 import cors from 'cors';
 import https from 'https';
 import fs from 'fs';
-
 const prisma = new PrismaClient();
 const app = express();
 
@@ -18,11 +17,11 @@ app.get('/locations', async (req, res) => {
 
 // SSL証明書と秘密鍵の読み込み
 const options = {
-  cert: fs.readFileSync('certs/install.pem'),
-  key: fs.readFileSync('certs/install-key.pem'),
+  cert: fs.readFileSync('../certs/kansai.local.pem'),
+  key: fs.readFileSync('../certs/kansai.local-key.pem'),
 };
 
 // HTTPSサーバーの作成
-https.createServer(options, app).listen(3000, '192.168.11.14', () => {
-  console.log('HTTPS Server is running on https://192.168.11.14:3000');
+https.createServer(options, app).listen(3000, () => {
+  console.log(`HTTPS Server is running on https://localhost:3000`);
 });
