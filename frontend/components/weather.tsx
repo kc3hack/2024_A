@@ -1,16 +1,30 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./Map.css";
-import L from "leaflet";
+import L, { DragEndEvent } from "leaflet";
 L.Icon.Default.imagePath =
   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/";
 
-export const Weather = () => {
-  const [currentPosition, setCurrentPosition] = useState([35.173, 136.97]);
-  const [markerPosition, setMarkerPosition] = useState([35.173, 136.97]);
-  const [weather, setWeather] = useState(null);
+const Weather = () => {
+  const [currentPosition, setCurrentPosition] = useState<[number, number]>([
+    35.173, 136.97,
+  ]);
+  const [markerPosition, setMarkerPosition] = useState<[number, number]>([
+    35.173, 136.97,
+  ]);
+  const [weather, setWeather] = useState<Weather | null>(null);
   const [loading, setLoading] = useState(false);
   const markerRef = useRef(null);
+
+  interface Weather {
+    name: string;
+    main: {
+      temp: number;
+    };
+    weather: {
+      description: string;
+    }[];
+  }
 
   useEffect(() => {
     getCurrentPosition();
@@ -28,14 +42,14 @@ export const Weather = () => {
         },
         (error) => {
           console.error("Error getting the current position:", error);
-        }
+        },
       );
     } else {
       console.error("Geolocation is not supported by this browser.");
     }
   };
 
-  const fetchWeather = async (latitude, longitude) => {
+  const fetchWeather = async (latitude: number, longitude: number) => {
     const apiKey = "api"; // OpenWeatherMap API key
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     try {
@@ -53,7 +67,7 @@ export const Weather = () => {
     }
   };
 
-  const handleMarkerDragEnd = (e) => {
+  const handleMarkerDragEnd = (e: DragEndEvent) => {
     const newPosition = e.target.getLatLng();
     setMarkerPosition([newPosition.lat, newPosition.lng]);
     fetchWeather(newPosition.lat, newPosition.lng);
@@ -71,7 +85,7 @@ export const Weather = () => {
 
   return (
     <div>
-      <div class="map">
+      <div className="map">
         <MapContainer center={currentPosition} zoom={9}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -110,3 +124,5 @@ export const Weather = () => {
     </div>
   );
 };
+
+export default Weather;

@@ -1,13 +1,15 @@
 .leaflet-container {
-  width: 600px;
   height: 300px;
   margin: 10px;
+  width: 600px;
 }
 
 .leaflet-popup-content-wrapper {
   background-color: white; /* ポップアップの背景色 */
   border-radius: 4px; /* ポップアップの角丸 */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); /* 影の設定 */
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23); /* 影の設定 */
 }
 
 .leaflet-popup-content {
@@ -19,8 +21,8 @@
 }
 
 .handleReturnToCurrentPosition {
-  position: absolute;
   left: center;
+  position: absolute;
   top: 50px;
   z-index: 1000;
 }
