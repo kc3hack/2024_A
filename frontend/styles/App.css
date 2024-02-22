@@ -34,5 +34,11 @@
   z-index: -1;
 }
 .Diagonal {
-  background: repeating-linear-gradient( 45deg, #ffc107, #ffc107 10px, #ffe9a7 10px, #ffe9a7 50px );
+  background: repeating-linear-gradient(
+    45deg,
+    #ffc107,
+    #ffc107 10px,
+    #ffe9a7 10px,
+    #ffe9a7 50px
+  );
 }

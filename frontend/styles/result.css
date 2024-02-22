@@ -1,9 +1,8 @@
 .leftAlign {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .leftAlign li {
-    text-align: left;
-  }
-  
+  list-style: none;
+  padding: 0;
+}
+
+.leftAlign li {
+  text-align: left;
+}

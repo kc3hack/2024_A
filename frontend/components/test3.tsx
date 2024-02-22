@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { search } from './test2';
-import { musicData } from './App';
-import '../styles/App.css';
+import React, { useEffect, useState } from "react";
+import { search } from "./test2";
+import { musicData } from "./App";
+import "../styles/App.css";
 
 function App() {
   const [searchResults, setSearchResults] = useState<number[]>([]);
 
   useEffect(() => {
-    const results = search('n');
+    const results = search("n");
     setSearchResults(results);
   }, []);
 
