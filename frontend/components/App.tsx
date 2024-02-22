@@ -243,7 +243,7 @@ function decisionParameter(weather: string, address: string) {
   return returnData;
 }
 export function searchAuto(weather: string, addres: string, musicData: Song[]) {
-  return searchByInformation(musicData, decisionParameter(weather, addres))[0];
+  return searchByInformation(musicData, decisionParameter(weather, addres));
 }
 
 console.log(searchAuto("Snow", "大阪府", musicData));
