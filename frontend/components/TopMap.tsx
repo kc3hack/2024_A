@@ -90,11 +90,6 @@ const Weather = () => {
     fetchWeather(newPosition.lat, newPosition.lng);
   };
 
-  const handleRegisterMarkerPosition = () => {
-    // マーカーの位置を登録する他の処理を追加する
-    alert("マーカーの位置が登録されました: " + markerPosition);
-  };
-
   const handleReturnToCurrentPosition = () => {
     setMarkerPosition(currentPosition);
     setMapCenter(currentPosition);
@@ -133,9 +128,6 @@ const Weather = () => {
         </MapContainer>
       </div>
       <div>
-        <button onClick={handleRegisterMarkerPosition}>
-          マーカーの位置を登録する
-        </button>
         <div className="handleReturnToCurrentPosition">
           <button onClick={handleReturnToCurrentPosition}>現在地に戻る</button>
         </div>
