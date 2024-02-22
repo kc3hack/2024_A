@@ -17,3 +17,35 @@
   position: absolute;
   width: 60%;
 }
+
+.leaflet-container {
+  height: 400px;
+  margin-left: auto;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: white;
+  /* ポップアップの背景色 */
+  border-radius: 4px;
+  /* ポップアップの角丸 */
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+  /* 影の設定 */
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px;
+  /* ポップアップ内のコンテンツとの余白 */
+}
+
+.handleReturnToCurrentPosition {
+  left: center;
+  position: absolute;
+  top: 50px;
+  z-index: 0;
+  /* stylelint-disable-next-line prettier/prettier */
+}

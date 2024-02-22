@@ -1,4 +1,6 @@
 import "../styles/Map.css";
+import Weather from "./weather";
+import "leaflet/dist/leaflet.css";
 
 const Map = () => {
   return (
@@ -8,7 +10,9 @@ const Map = () => {
         <br />
         背景をのせる予定
       </div>
-      <div className="map-main">ここに地図をのせる</div>
+      <div className="map-main">
+        <Weather />
+      </div>
     </div>
   );
 };
