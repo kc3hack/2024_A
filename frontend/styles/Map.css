@@ -45,7 +45,7 @@
 .handleReturnToCurrentPosition {
   left: center;
   position: absolute;
-  top: 50px;
+  top: 100px;
   z-index: 0;
   /* stylelint-disable-next-line prettier/prettier */
 }
