@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L, { DragEndEvent } from "leaflet";
 L.Icon.Default.imagePath =
   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/";
@@ -12,7 +12,10 @@ const Weather = () => {
     35.173, 136.97,
   ]);
   const [weather, setWeather] = useState<Weather | null>(null);
+  const [mapCenter, setMapCenter] = useState<[number, number]>(currentPosition);
   const [loading, setLoading] = useState(false);
+  const [triggerFlyTo, setTriggerFlyTo] = useState(false);
+
   const markerRef = useRef(null);
 
   interface Weather {
@@ -28,6 +31,21 @@ const Weather = () => {
   useEffect(() => {
     getCurrentPosition();
   }, []);
+
+  const MoveToCurrentPosition = ({
+    position,
+  }: {
+    position: [number, number];
+  }) => {
+    const map = useMap();
+
+    useEffect(() => {
+      map.flyTo(position);
+      setTriggerFlyTo(false);
+    }, [position, map, triggerFlyTo]);
+
+    return null;
+  };
 
   const getCurrentPosition = () => {
     if (navigator.geolocation) {
@@ -79,13 +97,14 @@ const Weather = () => {
 
   const handleReturnToCurrentPosition = () => {
     setMarkerPosition(currentPosition);
-    console.log(markerPosition);
+    setMapCenter(currentPosition);
+    setTriggerFlyTo(true);
   };
 
   return (
     <div>
       <div className="map">
-        <MapContainer center={currentPosition} zoom={9}>
+        <MapContainer center={mapCenter} zoom={9} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -110,6 +129,7 @@ const Weather = () => {
               )}
             </Popup>
           </Marker>
+          <MoveToCurrentPosition position={currentPosition} />
         </MapContainer>
       </div>
       <div>
