@@ -24,13 +24,13 @@
   top: 0;
 }
 .bg_pattern {
+  background-color: #ffe9a7;
+  height: 100vh;
+  left: 0;
+  opacity: 0.4;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100vw;
-  height: 100vh;
-  background-color: #ffe9a7;
-  opacity: 0.4;
   z-index: -1;
 }
 .Diagonal {
