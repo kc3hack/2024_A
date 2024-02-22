@@ -1,5 +1,5 @@
 import "../styles/Map.css";
-import Weather from "./weather";
+import Leafret from "./Leafret";
 import "leaflet/dist/leaflet.css";
 
 const Map = () => {
@@ -11,7 +11,7 @@ const Map = () => {
         背景をのせる予定
       </div>
       <div className="map-main">
-        <Weather />
+        <Leafret />
       </div>
     </div>
   );
