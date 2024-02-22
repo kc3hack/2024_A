@@ -163,7 +163,7 @@ interface Song {
   id: number;
 }
 // サンプルの音楽データ
-const musicData: Song[] = [
+export const musicData: Song[] = [
   {
     file: "../public/PressEnter.mp3",
     title: "PressEnter",
@@ -242,7 +242,7 @@ function decisionParameter(weather: string, address: string) {
   //ここからどうしよう
   return returnData;
 }
-function searchAuto(weather: string, addres: string, musicData: Song[]) {
+export function searchAuto(weather: string, addres: string, musicData: Song[]) {
   return searchByInformation(musicData, decisionParameter(weather, addres))[0];
 }
 

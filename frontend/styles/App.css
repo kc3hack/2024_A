@@ -1,45 +1,38 @@
-#root {
-  margin: 0 auto;
-  max-width: 1280px;
-  padding: 2rem;
-  text-align: center;
+/* App.css */
+.app-container {
+  position: relative;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  transition: filter 300ms;
-  will-change: filter;
+.leftAlign {
+  list-style-type: none;
+  padding: 0;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.leftAlign li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px; /* 必要に応じてマージンを調整 */
+  position: relative; /* 追加 */
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.left-align {
+  text-align: left;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.left-top-align {
+  position: absolute;
+  top: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffe9a7;
+  opacity: 0.4;
+  z-index: -1;
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.Diagonal {
+  background: repeating-linear-gradient( 45deg, #ffc107, #ffc107 10px, #ffe9a7 10px, #ffe9a7 50px );
 }
