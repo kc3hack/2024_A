@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { search } from "./test2";
-import { musicData } from "./App";
+import { search } from "./test";
+import { musicData } from "./data";
 import "../styles/App.css";
 
 function App() {
