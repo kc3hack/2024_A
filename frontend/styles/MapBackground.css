@@ -1,0 +1,40 @@
+.map-background {
+  align-items: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  height: 100vh;
+  justify-content: center;
+  min-height: var(--map-min-height);
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.map-background .weather {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* 以下は天気に応じた背景画像のスタイリング */
+.map-background.clear {
+  background-color: rgba(233, 158, 37, 0.827);
+  /*background-image: url(clear.png);*/
+}
+
+.map-background.cloud {
+  background-color: rgba(135, 132, 130, 0.827);
+  /*background-image: url(cloud.png);*/
+}
+
+.map-background.rain {
+  background-color: rgba(94, 205, 222, 0.827);
+  /*background-image: url(rain.png);*/
+}
+
+.map-background.default {
+  background-color: rgba(124, 26, 85, 0.827);
+  /*background-image: url(default.jpg);*/
+}
