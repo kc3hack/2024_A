@@ -1,13 +1,12 @@
 import Topmap from "./TopMap";
 import "leaflet/dist/leaflet.css";
+import MapBackground from "./MapBackground.tsx";
 
 const Map = () => {
   return (
     <div className="map">
       <div className="map-background">
-        ここは場所に合った
-        <br />
-        背景をのせる予定
+        <MapBackground latitude={35} longitude={135} />
       </div>
       <div className="map-main">
         <Topmap />
