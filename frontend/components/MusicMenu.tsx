@@ -1,6 +1,13 @@
+import React, { useState } from "react";
 import "../styles/MusicMenu.css";
 
 const MusicMenu = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayButtonClick = () => {
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <div className="music-menu">
       <div className="music-description">
@@ -13,7 +20,12 @@ const MusicMenu = () => {
           alt=""
           className="play-track-prev-button"
         />
-        <img src="/play-button.svg" alt="" className="play-track-button" />
+        <img
+          src={isPlaying ? "/play-pause.svg" : "/play-button.svg"}
+          alt=""
+          className="play-track-button"
+          onClick={handlePlayButtonClick}
+        />
         <img
           src="/play-track-next.svg"
           alt=""
