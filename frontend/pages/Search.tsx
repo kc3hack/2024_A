@@ -6,6 +6,7 @@ const Search = () => {
   return (
     <main>
       <Header />
+      <h1>ここは検索結果のページです。</h1>
       {/* <SearchComponent /> */}
       <Footer />
     </main>
