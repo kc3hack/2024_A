@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import History from "../pages/History";
 import Location from "../pages/Location";
 import Search from "../pages/Search";
+import React from "react";
 
 const App = () => {
   return (
