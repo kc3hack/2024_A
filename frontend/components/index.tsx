@@ -11,7 +11,7 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/location/" element={<Location />}></Route>
         <Route path="/history/" element={<History />}></Route>
-        <Route path="/search/" element={<Search />}></Route>
+        <Route path="/search//*" element={<Search />}></Route>
       </Routes>
     </BrowserRouter>
   );

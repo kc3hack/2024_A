@@ -8,5 +8,6 @@ export function search(keyWord: string): number[] {
       result.push(index);
     }
   }
+  console.log("検索した");
   return result;
 }

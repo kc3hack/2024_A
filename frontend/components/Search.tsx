@@ -2,6 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import SearchResultPage from "./searchResultPage";
+import { Route, Routes } from "react-router-dom";
+
 // 音楽データの型定義
 interface Song {
   file: string;
@@ -38,17 +40,18 @@ const musicData: Song[] = [
   },
 ];
 
-// タイトルにキーワードが含まれる曲を検索する関数
-function search(data: Song[], keyWord: string): number[] {
-  var result: number[] = [];
-  for (let index = 0; index < data.length; index++) {
-    const element = data[index];
-    if (element.title.indexOf(keyWord) >= 0) {
-      result.push(index);
-    }
-  }
-  return result;
-}
+// // タイトルにキーワードが含まれる曲を検索する関数
+// export function search(data: Song[], keyWord: string): number[] {
+//   var result: number[] = [];
+//   for (let index = 0; index < data.length; index++) {
+//     const element = data[index];
+//     if (element.title.indexOf(keyWord) >= 0) {
+//       result.push(index);
+//     }
+//   }
+//   console.log("検索した");
+//   return result;
+// }
 
 //console.log(search(musicData, "e"))//試しに作ったやつ
 // パラメーターに基づいて曲を検索し、類似度でソートする関数
@@ -98,16 +101,17 @@ function removeDuplicates(arr: number[]): number[] {
 }
 
 // React コンポーネント
-function App() {
+function Search() {
   return (
-    <div>
-      <div>
-        <SearchResultPage />
-      </div>
-    </div>
+    <>
+      {/* <Searchbar /> */}
+      <Routes>
+        <Route path="/search/" element={<SearchResultPage />} />
+      </Routes>
+    </>
   );
 }
-export default App;
+export default Search;
 /* history.unshift(id);曲のidを変数に入れると保存される。
 function historySort():被りを消す
 historyは前から順に曲のidが入っている

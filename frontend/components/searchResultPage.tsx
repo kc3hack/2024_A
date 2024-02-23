@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { search } from "./test";
+import { useParams } from "react-router-dom";
 import { musicData } from "./data";
-
+import React from "react";
+import { search } from "./test";
 const SearchResultPage = () => {
-  const [searchResults, setSearchResults] = useState<number[]>([]);
+  const { searchTerm } = useParams<{ searchTerm: string | undefined }>();
+  const decodedSearchTerm = decodeURIComponent(searchTerm || "s");
 
-  useEffect(() => {
-    const results = search("n");
-    setSearchResults(results);
-  }, []);
+  // 検索結果を取得
+
+  const searchResults = search(decodedSearchTerm);
 
   const handleButtonClick = (index: number) => {
     console.log(`ボタンが押されました。曲名: ${musicData[index].title}`);
@@ -22,10 +22,12 @@ const SearchResultPage = () => {
         {searchResults.length === 0 ? (
           <li className="left-align">検索結果がありません</li>
         ) : (
-          searchResults.map((index) => (
-            <li key={index} className="left-top-align">
-              <span>{musicData[index].title}</span>
-              <button onClick={() => handleButtonClick(index)}>選択</button>
+          searchResults.map((resultIndex) => (
+            <li key={resultIndex} className="left-top-align">
+              <span>{musicData[resultIndex].title}</span>
+              <button onClick={() => handleButtonClick(resultIndex)}>
+                選択
+              </button>
             </li>
           ))
         )}
