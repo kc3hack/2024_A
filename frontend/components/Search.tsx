@@ -1,7 +1,7 @@
 /* eslint-disable no-var */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
-
+import SearchResultPage from "./searchResultPage";
 // 音楽データの型定義
 interface Song {
   file: string;
@@ -102,7 +102,7 @@ function App() {
   return (
     <div>
       <div>
-        <h2>検索用</h2>
+        <SearchResultPage />
       </div>
     </div>
   );
