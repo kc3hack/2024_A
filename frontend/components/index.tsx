@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import History from "../pages/History";
 import Location from "../pages/Location";
 import Search from "../pages/Search";
+import RegisterMusic from "../pages/RegisterMusic";
 import NotFound from "../pages/NotFound";
 import React from "react";
 
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/history/" element={<History />}></Route>
         <Route path="/search//*" element={<Search />}></Route>
         <Route path="*" element={<NotFound />}></Route>
+        <Route path="/register-music/" element={<RegisterMusic />}></Route>
       </Routes>
     </BrowserRouter>
   );

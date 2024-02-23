@@ -27,7 +27,7 @@
   "include": [
     "src",
     "pages/index.tsx",
-    "components/data.tsx",
+    "components/data.ts",
     "pages/vite-env.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
