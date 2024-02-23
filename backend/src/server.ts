@@ -5,7 +5,6 @@ import cors from 'cors';
 import https from 'https';
 import fs from 'fs';
 import bodyParser from 'body-parser';
-import { parse } from 'path';
 
 const prisma = new PrismaClient();
 const app = express();
