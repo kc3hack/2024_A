@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { search } from "./test";
 import { musicData } from "./data";
-import "../styles/App.css";
 
-function App() {
+const SearchResultPage = () => {
   const [searchResults, setSearchResults] = useState<number[]>([]);
 
   useEffect(() => {
@@ -34,6 +33,6 @@ function App() {
       <div className="bg_pattern Diagonal"></div>
     </div>
   );
-}
+};
 
-export default App;
+export default SearchResultPage;
