@@ -1,11 +1,13 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import LocationComponent from "../components/Location";
+import "../styles/Location.css";
 
 const Location = () => {
   return (
     <main>
       <Header />
-      <h1>ここは地点の追加のページです</h1>
+      <LocationComponent />
       <Footer />
     </main>
   );

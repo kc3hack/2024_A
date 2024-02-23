@@ -3,6 +3,8 @@
   background-color: rgb(64, 125, 190);
   display: flex;
   min-height: 70px;
+  position: relative;
+  z-index: 9999;
 }
 
 .title {

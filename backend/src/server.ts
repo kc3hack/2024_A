@@ -36,11 +36,12 @@ async function getLocation(req: express.Request, res: express.Response) {
 }
 
 async function createLocation(req: express.Request, res: express.Response) {
-  const { long, lat } = req.body;
+  const { long, lat, musicID } = req.body;
   const location = await prisma.location.create({
     data: {
       long: long,
       lat: lat,
+      musicID: parseInt(musicID, 10),
     },
   });
   res.json(location);
