@@ -11,4 +11,5 @@ model Location {
   id      Int      @id @default(autoincrement())
   long    String
   lat     String
+  musicID Int
 }

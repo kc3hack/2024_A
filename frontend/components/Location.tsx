@@ -25,6 +25,8 @@ const Weather = () => {
     locations.reduce((acc, location) => ({ ...acc, [location.id]: true }), {}),
   );
 
+  const musicID: number = 999;
+
   useEffect(() => {
     getCurrentPosition();
     // 非同期関数を定義
@@ -83,8 +85,9 @@ const Weather = () => {
     setTriggerFlyTo(true);
   };
 
-  const createPoint = (marker_pos: [number, number]) => {
-    createLocation(marker_pos[1], marker_pos[0])
+  const createPoint = (marker_pos: [number, number], _musicID: number) => {
+    console.log(_musicID);
+    createLocation(marker_pos[1], marker_pos[0], _musicID)
       .then(() => {
         console.log(marker_pos);
       })
@@ -101,8 +104,7 @@ const Weather = () => {
 
   const registerMusicHandler = () => {
     console.log("音楽を登録します");
-    createPoint(markerPosition);
-    console.log(locations);
+    createPoint(markerPosition, musicID);
   };
 
   return (

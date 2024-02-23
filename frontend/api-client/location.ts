@@ -2,6 +2,7 @@ export interface pointData {
   id: number;
   long: string;
   lat: string;
+  musicId: number;
 }
 
 export async function getLocation(id: number): Promise<pointData> {
@@ -31,11 +32,13 @@ export async function getAllLocations(): Promise<pointData[]> {
 export async function createLocation(
   long: number,
   lat: number,
+  musicID: number,
 ): Promise<pointData> {
   const sendData = {
     id: 0, //dummy Data
     long: long.toString(),
     lat: lat.toString(),
+    musicID: musicID,
   };
   const response = await fetch("https://192.168.11.14:3000/create-location", {
     method: "POST",
