@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/MusicMenu.css";
 import useSound from "use-sound";
 import music from "/Awayuki.mp3";
 
 const MusicMenu = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [play, { stop }] = useSound(music);
+  const [volume, setVolume] = useState(0.5); // 初期音量を0.5（50%）に設定
+  const [play, { stop, sound }] = useSound(music, { volume });
+
+  useEffect(() => {
+    if (sound) {
+      sound.volume(volume);
+    }
+  }, [volume, sound]);
+
+  const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setVolume(Number(event.target.value) / 100);
+  };
+
   const handlePlayButtonClick = () => {
     setIsPlaying(!isPlaying);
     if (isPlaying) {
@@ -46,6 +58,8 @@ const MusicMenu = () => {
           id="volume-bar"
           min="0"
           max="100"
+          value={volume * 100} // 音量を0から100の範囲に調整
+          onChange={handleVolumeChange} // 音量が変更されたときにhandleVolumeChangeを呼び出す
           className="volume-bar"
         ></input>
       </div>
