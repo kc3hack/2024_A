@@ -1,19 +1,29 @@
 import { useParams } from "react-router-dom";
 import { musicData } from "./data";
 import React from "react";
-import { search } from "./test";
 const SearchResultPage = () => {
   const { searchTerm } = useParams<{ searchTerm: string | undefined }>();
-  const decodedSearchTerm = decodeURIComponent(searchTerm || "s");
+  const decodedSearchTerm = decodeURIComponent(searchTerm || "");
 
   // 検索結果を取得
-
   const searchResults = search(decodedSearchTerm);
 
   const handleButtonClick = (index: number) => {
     console.log(`ボタンが押されました。曲名: ${musicData[index].title}`);
     // ここにボタンが押されたときの処理を追加
   };
+
+  function search(keyWord: string): number[] {
+    const result: number[] = [];
+    console.log("検索キーワード: " + keyWord);
+    for (let index = 0; index < musicData.length; index++) {
+      const element = musicData[index];
+      if (element.title.indexOf(keyWord) >= 0) {
+        result.push(index);
+      }
+    }
+    return result;
+  }
 
   return (
     <div className="app-container">

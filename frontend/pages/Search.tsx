@@ -1,13 +1,15 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import SearchComponent from "../components/Search";
+import SearchResultPage from "../components/SearchResultPage";
 
 const Search = () => {
   return (
     <main>
       <Header />
-      <h1>ここは検索結果のページです。</h1>
-      <SearchComponent />
+      <Routes>
+        <Route path=":searchTerm" element={<SearchResultPage />} />
+      </Routes>
       <Footer />
     </main>
   );
