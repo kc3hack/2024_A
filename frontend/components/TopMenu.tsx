@@ -1,3 +1,4 @@
+import SearchBar from "../components/Searchbar";
 import "../styles/TopMenu.css";
 
 const TestClick = () => {
@@ -19,7 +20,7 @@ const TopMenu = () => {
             onClick={TestClick}
           />
         </div>
-        <form>
+        {/* <form>
           <div className="search-bar">
             <img className="search-icon" src="search.svg" alt="" />
             <input
@@ -28,7 +29,8 @@ const TopMenu = () => {
               placeholder="曲を検索"
             />
           </div>
-        </form>
+        </form> */}
+        <SearchBar />
         <div>
           <img className="setting-icon" src="/gear-fill.svg" alt="" />
         </div>
