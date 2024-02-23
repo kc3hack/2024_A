@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import "../styles/MusicMenu.css";
+import useSound from "use-sound";
+import music from "/Awayuki.mp3";
 
 const MusicMenu = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-
+  const [play, { stop }] = useSound(music);
   const handlePlayButtonClick = () => {
     setIsPlaying(!isPlaying);
+    if (isPlaying) {
+      stop();
+    } else {
+      play();
+    }
   };
 
   return (
