@@ -1,12 +1,12 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import SearchComponent from "../components/Search";
+// import SearchComponent from "../components/Search";
 
 const Search = () => {
   return (
     <main>
       <Header />
-      <SearchComponent />
+      {/* <SearchComponent /> */}
       <Footer />
     </main>
   );
