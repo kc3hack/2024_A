@@ -10,9 +10,6 @@ const TopMenu = () => {
       </div>
       <div className="top-menu-items">
         <SearchBar />
-        <div>
-          <img className="setting-icon" src="/gear-fill.svg" alt="" />
-        </div>
       </div>
     </div>
   );
