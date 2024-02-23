@@ -1,16 +1,25 @@
+// RegisterMusic.tsx
+
 import { useParams } from "react-router-dom";
 import { musicData } from "./data";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import React from "react";
-const SearchResultPage = () => {
+const RegisterMusic = () => {
   const { searchTerm } = useParams<{ searchTerm: string | undefined }>();
   const decodedSearchTerm = decodeURIComponent(searchTerm || "");
 
   // 検索結果を取得
   const searchResults = search(decodedSearchTerm);
 
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
   const handleButtonClick = (index: number) => {
     console.log(`ボタンが押されました。曲名: ${musicData[index].title}`);
-    // ここにボタンが押されたときの処理を追加
+    dispatch({ type: "SET_MUSIC_ID", payload: index });
+    navigate("/location/");
   };
 
   function search(keyWord: string): number[] {
@@ -30,7 +39,7 @@ const SearchResultPage = () => {
 
   return (
     <div className="app-container">
-      <h1 id="top">検索結果</h1>
+      <h1 id="top">曲を選択する</h1>
       <ul id="resultList" className="leftAlign">
         {searchResults.length === 0 ? (
           <li className="left-align">検索結果がありません</li>
@@ -50,4 +59,4 @@ const SearchResultPage = () => {
   );
 };
 
-export default SearchResultPage;
+export default RegisterMusic;
