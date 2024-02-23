@@ -16,6 +16,9 @@ const SearchResultPage = () => {
   function search(keyWord: string): number[] {
     const result: number[] = [];
     console.log("検索キーワード: " + keyWord);
+    // 何も入力していない時は全曲を表示
+    if (keyWord === "all") return Array.from(Array(musicData.length).keys());
+
     for (let index = 0; index < musicData.length; index++) {
       const element = musicData[index];
       if (element.title.indexOf(keyWord) >= 0) {
