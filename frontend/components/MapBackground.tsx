@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/MapBackground.css"; // 外部のCSSファイルをインポート
+import "../styles/MapBackground.scss";
 
 const API_KEY = "api";
 
@@ -35,7 +36,7 @@ const MapBackground = ({
   } else if (weather === "Rain") {
     weatherClass = "rain";
   }
-
+  weatherClass ='rain';
   return (
     <div className={`map-background ${weatherClass}`}>
       {/* ここに地図やその他のコンテンツを表示 */}

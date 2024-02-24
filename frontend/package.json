@@ -26,10 +26,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.22.1",
     "socket.io": "^4.7.4",
     "socket.io-client": "^4.7.4",
-    "vite-plugin-inspect": "^0.8.3",
-    "react-router-dom": "^6.22.1"
+    "vite-plugin-inspect": "^0.8.3"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.16",
@@ -61,6 +61,7 @@
     "husky-init": "^8.0.0",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
+    "sass": "^1.71.1",
     "storybook": "^7.6.16",
     "stylelint": "^16.2.1",
     "stylelint-config-idiomatic-order": "^10.0.0",

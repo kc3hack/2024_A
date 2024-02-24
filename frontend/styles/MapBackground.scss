@@ -1,0 +1,27 @@
+$bgcolor: #f0dfd0;
+$transparent: rgba(255, 255, 255, 0);
+
+$color-1: #cfd9d7;
+$color-2: #7fcedd;
+
+$size: 3em;
+$big-size: $size * 2;
+$min: $size * 0.3;
+$max: $size * 0.5;
+
+.map-background.rain {
+  background:
+    linear-gradient(68deg, $color-1 $min, $transparent $min * 1.1) $size -#{$size},
+    linear-gradient(-68deg, $color-1 $min, $transparent $min * 1.1) -#{$size} -#{$size},
+    radial-gradient(circle, $color-1 $min, $transparent $min * 1.1) 0 0,
+    linear-gradient(68deg, $color-2 $min, $transparent $min * 1.1) 0 0,
+    linear-gradient(-68deg, $color-2 $min, $transparent $min * 1.1) 0 0,
+    radial-gradient(circle, $color-2 $min, $transparent $min * 1.1) $size $size;
+  background-size: $big-size $big-size;
+  background-color: $bgcolor;
+  background-repeat: repeat;
+  font:
+    14px/2 "Trebuchet MS",
+    Verdana,
+    sans-serif;
+}
