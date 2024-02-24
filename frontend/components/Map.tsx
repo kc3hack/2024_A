@@ -2,7 +2,7 @@ import Topmap from "./TopMap";
 import "../styles/Map.css";
 import "leaflet/dist/leaflet.css";
 import MapBackground from "./MapBackground.tsx";
-
+import React from "react";
 const Map = () => {
   return (
     <div className="map">

@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import { getHistory } from "../components/data";
 import { historySort } from "../components/data";
 import { musicData } from "../components/data";
-//import { historyAdd } from "../components/data";
+import React from "react";
 const History = () => {
   historySort();
   const historyID: number[] = getHistory();
