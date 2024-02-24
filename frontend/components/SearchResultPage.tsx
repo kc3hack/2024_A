@@ -38,7 +38,7 @@ const SearchResultPage = () => {
           <li className="left-align">検索結果がありません</li>
         ) : (
           searchResults.map((resultIndex) => (
-            <li key={resultIndex} className="result-element">
+            <li key={resultIndex} className="result-element border-animation">
               <span className="music-title">
                 {musicData[resultIndex].title}
               </span>
