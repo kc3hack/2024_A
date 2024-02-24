@@ -189,7 +189,7 @@ export const musicData: Song[] = [
   {
     file: "../public/ミッドナイト・ジャズ.mp3",
     title: "ミッドナイト・ジャズ",
-    information: [], // 情報が提供されていないため空の配列
+    information: [6, 8, 0],
     id: 9,
   },
   {
@@ -230,7 +230,7 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
     const element = data[index];
     const a: preResultData = {
       id: index,
-      point: 0,
+      point: Math.random()*5,
       file: element.file,
       title: element.title,
       information: element.information,
@@ -247,7 +247,7 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
       }
     }
     if (element.information[2] == parameters[2]) {
-      resultdata[index].point /= 2;
+      resultdata[index].point /= 10;
       resultdata[index].information[2] = 5;
     } else {
       resultdata[index].information[2] = 0;
