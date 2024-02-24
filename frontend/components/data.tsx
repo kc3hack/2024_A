@@ -19,7 +19,7 @@ function weatherType(value: string) {
       returnType = 4;
       break;
     default:
-      returnType = -1;
+      returnType = 0;
       break;
   }
   return returnType;
@@ -274,7 +274,7 @@ export function searchAuto(weather: string, addres: string) {
   return searchByInformation(musicData, decisionParameter(weather, addres));
 }
 
-console.log(searchAuto("Snow", "大阪府"));
+//console.log(searchAuto("Snow", "大阪府"));
 
 /* 
 天気
