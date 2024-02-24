@@ -6,12 +6,14 @@ import "../styles/Map.css";
 
 const Home = () => {
   return (
-    <main>
+    <div>
       <Header />
-      <Map />
-      <Value />
+      <main>
+        <Map />
+        <Value />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 };
 

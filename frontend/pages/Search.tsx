@@ -5,13 +5,15 @@ import SearchResultPage from "../components/SearchResultPage";
 
 const Search = () => {
   return (
-    <main>
+    <div>
       <Header />
-      <Routes>
-        <Route path=":searchTerm" element={<SearchResultPage />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path=":searchTerm" element={<SearchResultPage />} />
+        </Routes>
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 };
 

@@ -6,11 +6,15 @@ import { store } from "../components/store";
 import { Provider } from "react-redux";
 const Location = () => {
   return (
-    <Provider store={store}>
-      <Header />
-      <LocationComponent />
-      <Footer />
-    </Provider>
+    <div>
+      <Provider store={store}>
+        <Header />
+        <main>
+          <LocationComponent />
+        </main>
+        <Footer />
+      </Provider>
+    </div>
   );
 };
 

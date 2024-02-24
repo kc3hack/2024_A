@@ -3,11 +3,13 @@ import Footer from "../components/Footer";
 
 const History = () => {
   return (
-    <main>
+    <div>
       <Header />
-      <h1>ここは履歴のページです</h1>
+      <main>
+        <h1>ここは履歴のページです</h1>
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 };
 
