@@ -35,12 +35,12 @@
 
 /* 再生ボタン */
 .register-element .register-music-button {
+  cursor: pointer;
   margin-left: 320px;
   margin-top: 0px;
   position: absolute;
   transition: scale 0.3s;
   width: 30px;
-  cursor: pointer;
 }
 
 .register-element .register-music-button:hover {
