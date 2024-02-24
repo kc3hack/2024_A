@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 import { musicData } from "./data";
-import React, { useEffect, useState } from "react";
-import useSound from "use-sound";
 
 const SearchResultPage = () => {
   const { searchTerm } = useParams<{ searchTerm: string | undefined }>();
