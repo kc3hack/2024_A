@@ -1,10 +1,10 @@
-// App.tsx
-
+// canvas.tsx
+import "../styles/Value.css";
 import React, { useRef, useEffect } from "react";
 import { musicData } from "./data";
 import { searchAuto } from "./data";
 
-const CanvasComponent: React.FC = () => {
+export const CanvasComponent: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -13,7 +13,8 @@ const CanvasComponent: React.FC = () => {
 
     const context = canvas.getContext("2d");
     if (!context) return;
-
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight-1000;
     context.clearRect(0, 0, 10000, 10000);
 
     const id = searchAuto("Clouds", "大阪府")[0].id; //idに曲のidを入力
@@ -73,7 +74,7 @@ const CanvasComponent: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div className="value">
       <CanvasComponent />
     </div>
   );
