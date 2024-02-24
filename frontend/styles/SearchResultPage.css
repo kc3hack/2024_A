@@ -11,12 +11,12 @@
 }
 
 .result-element {
-  position: relative;
   border-bottom: 1px solid rgb(119, 119, 119);
   display: flex;
   list-style: none;
   margin-bottom: 10px;
   padding: 30px;
+  position: relative;
   width: 400px;
 }
 
@@ -30,11 +30,11 @@
 
 /* 再生ボタン */
 .result-element .play-music-button {
-  position: absolute;
   margin-left: 300px;
   margin-top: -18px;
-  width: 60px;
+  position: absolute;
   transition: 0.3s;
+  width: 60px;
 }
 
 .result-element .play-music-button:hover {
