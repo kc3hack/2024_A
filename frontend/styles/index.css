@@ -40,5 +40,5 @@ footer {
 
 /* アイコンをホバーしたときのアニメーション設定 */
 footer .hover-icon {
-  transition: all 0.3s 0s ease;;
+  transition: all 0.3s 0s ease;
 }
