@@ -30,25 +30,25 @@ a {
   .top-menu {
     /* align-items: center; */
     background-color: rgb(64, 125, 190);
-    /* display:block; */
-    width: 100%;
     min-height: var(--padding-top-menu);
     position: relative;
+    /* display:block; */
+    width: 100%;
     z-index: 9999;
   }
 
   .title {
+    left: 50%;
     margin-left: 0px;
     position: absolute;
     top: 10%;
-    left: 50%;
     transform: translateX(-50%);
   }
 
   .top-menu-items {
-    position: absolute;
     bottom: 20%;
     left: 50%;
+    position: absolute;
     transform: translateX(-50%);
   }
 }
