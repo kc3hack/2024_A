@@ -33,6 +33,7 @@ const SearchResultPage = () => {
   return (
     <div className="app-container">
       <h1 id="top">検索結果</h1>
+      <hr />
       <ul className="result-list">
         {searchResults.length === 0 ? (
           <li className="left-align">検索結果がありません</li>
@@ -42,9 +43,13 @@ const SearchResultPage = () => {
               <span className="music-title">
                 {musicData[resultIndex].title}
               </span>
-              <button onClick={() => handleButtonClick(resultIndex)}>
-                選択
-              </button>
+
+              <img
+                src="/play-button.svg"
+                alt=""
+                className="play-music-button"
+                onClick={() => handleButtonClick(resultIndex)}
+              />
             </li>
           ))
         )}

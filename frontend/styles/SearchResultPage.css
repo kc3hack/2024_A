@@ -1,6 +1,7 @@
 .app-container {
   margin-bottom: calc(var(--value-bottom-margin) + 30px);
   margin-left: 50px;
+  margin-top: 20px;
   min-height: var(--search-result-page-min-height);
   /* color: white; */
 }
@@ -11,32 +12,46 @@
 }
 
 .result-element {
+  position: relative;
   border-bottom: 1px solid rgb(119, 119, 119);
   display: flex;
   list-style: none;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 30px;
   width: 400px;
 }
 
+.result-element:hover {
+  transform: scale(1.01);
+}
+
 .result-element .music-title {
-  /* color: white; */
   font-size: 20px;
 }
 
-.result-element button {
-  margin-left: auto;
+/* 再生ボタン */
+.result-element .play-music-button {
+  position: absolute;
+  margin-left: 300px;
+  margin-top: -18px;
+  width: 60px;
+  transition: 0.3s;
 }
 
+.result-element .play-music-button:hover {
+  transform: scale(1.3);
+}
+
+/* 検索結果の曲の下線 */
 .border-animation {
-  text-decoration: none;
   background-image: linear-gradient(90deg, #ad0000, #ff0000);
-  background-repeat: no-repeat;
   background-position: left bottom;
+  background-repeat: no-repeat;
   background-size: 0 1px;
+  text-decoration: none;
   transition: background-size 0.3s;
 }
 
 .border-animation:hover {
-  background-size: 100% 2px;
+  background-size: 100% 1px;
 }
