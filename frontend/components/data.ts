@@ -181,14 +181,14 @@ export const musicData: Song[] = [
     id: 7,
   },
   {
-    url: "/パステルハウス.mp3",
-    title: "パステルハウス",
+    url: "/パステルハウス.mp3",
+    title: "パステルハウス",
     information: [7, 6, 0],
     id: 8,
   },
   {
-    url: "/ミッドナイト・ジャズ.mp3",
-    title: "ミッドナイト・ジャズ",
+    url: "/ミッドナイト・ジャズ.mp3",
+    title: "ミッドナイト・ジャズ",
     information: [6, 8, 0],
     id: 9,
   },
