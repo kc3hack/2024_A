@@ -15,7 +15,7 @@ const History = () => {
     dispatch({ type: "SET_NEWLY_SELECTED_MUSIC_ID", payload: index }); // 再生中の音楽のIDを設定
     stop();
   };
-/*   return (
+  /*   return (
     <div>
       
       <ul id="resultList" className="leftAlign">
@@ -36,35 +36,36 @@ const History = () => {
     </div>
   );
 }; */
-return (
-  <div><Header />
-  <div className="app-container">
-    <h1 id="top">履歴</h1>
-    <ul className="result-list">
-      {historyID.length === 0 ? (
-        <li className="result-nothing">履歴がありません</li>
-      ) : (
-        historyID.map((resultIndex) => (
-          <li key={resultIndex} className="result-element border-animation">
-            <span className="music-title">
-              {musicData[resultIndex].title}
-            </span>
+  return (
+    <div>
+      <Header />
+      <div className="app-container">
+        <h1 id="top">履歴</h1>
+        <ul className="result-list">
+          {historyID.length === 0 ? (
+            <li className="result-nothing">履歴がありません</li>
+          ) : (
+            historyID.map((resultIndex) => (
+              <li key={resultIndex} className="result-element border-animation">
+                <span className="music-title">
+                  {musicData[resultIndex].title}
+                </span>
 
-            <img
-              src="/play-button.svg"
-              alt=""
-              className="play-music-button"
-              onClick={() => handleButtonClick(resultIndex)}
-            />
-          </li>
-        ))
-      )}
-    </ul>
-    <div className="bg_pattern Diagonal"></div>
-  </div><Footer />
-  </div>
-);
+                <img
+                  src="/play-button.svg"
+                  alt=""
+                  className="play-music-button"
+                  onClick={() => handleButtonClick(resultIndex)}
+                />
+              </li>
+            ))
+          )}
+        </ul>
+        <div className="bg_pattern Diagonal"></div>
+      </div>
+      <Footer />
+    </div>
+  );
 };
-
 
 export default History;

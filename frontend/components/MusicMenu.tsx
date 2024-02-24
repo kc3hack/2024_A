@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/MusicMenu.css";
 import useSound from "use-sound";
-import { musicData, searchAuto ,historyAdd } from "./data";
+import { musicData, searchAuto, historyAdd } from "./data";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store";
 
@@ -91,7 +91,8 @@ const MusicMenu = () => {
     };
   }, [dispatch, sound, isPlaying]); // isPlayingを依存性配列に追加
 
-  useEffect(() => {historyAdd(playingMusicId);
+  useEffect(() => {
+    historyAdd(playingMusicId);
     if (playingMusicId !== newlySelectedMusicId) {
       // 再生中の音楽のIDが新しく選択された音楽のIDと異なる場合
       dispatch({
@@ -101,7 +102,6 @@ const MusicMenu = () => {
       stop();
       dispatch({ type: "SET_PLAYBACK_POSITION", payload: 0 });
       play();
-      
     }
   }, [playingMusicId, newlySelectedMusicId, play, stop, dispatch]);
 
@@ -125,7 +125,7 @@ const MusicMenu = () => {
   const handleLoopButtonClick = () => {
     dispatch({ type: "SET_AUTO_PLAY", payload: !isAutoPlay });
   };
-  
+
   return (
     <div className="music-menu">
       <div className="music-description">
