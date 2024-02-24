@@ -33,7 +33,6 @@ const SearchResultPage = () => {
   return (
     <div className="app-container">
       <h1 id="top">検索結果</h1>
-      <hr />
       <ul className="result-list">
         {searchResults.length === 0 ? (
           <li className="result-nothing">検索結果がありません</li>

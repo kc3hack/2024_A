@@ -42,7 +42,6 @@ const RegisterMusic = () => {
   return (
     <div className="app-container">
       <h1 id="top">曲を選択する</h1>
-      <hr />
       <ul className="register-list">
         {searchResults.length === 0 ? (
           <li className="register-nothing">検索結果がありません</li>
@@ -52,12 +51,6 @@ const RegisterMusic = () => {
               <span className="music-title">
                 {musicData[resultIndex].title}
               </span>
-              {/* <button
-                onClick={() => handleButtonClick(resultIndex)}
-                className="play-music-button"
-              >
-                選択
-              </button> */}
               <img
                 src="/math-plus.svg"
                 alt=""

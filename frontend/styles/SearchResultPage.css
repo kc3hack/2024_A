@@ -13,6 +13,7 @@
 .result-list {
   align-items: center;
   position: relative;
+  width: 420px;
 }
 
 .result-element {

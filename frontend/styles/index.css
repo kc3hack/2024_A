@@ -48,3 +48,9 @@ footer {
 footer .hover-icon {
   transition: all 0.3s 0s ease;
 }
+
+@media screen and (max-width: 600px) {
+  *{
+    --padding-top-menu: 140px;
+  }
+}
