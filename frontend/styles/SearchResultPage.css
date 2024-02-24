@@ -1,0 +1,13 @@
+.app-container {
+    min-height: var(--search-result-page-min-height);
+}
+
+.leftAlign {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .leftAlign li {
+    text-align: left;
+  }
+  

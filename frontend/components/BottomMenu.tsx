@@ -1,5 +1,6 @@
 import "../styles/BottomMenu.css";
 import { Link } from "react-router-dom";
+import Searchbar from "./SearchBar";
 
 const BottomMenu = () => {
   return (

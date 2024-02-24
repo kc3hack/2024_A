@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { musicData } from "./data";
 import React from "react";
+import "../styles/SearchResultPage.css";
+
 const SearchResultPage = () => {
   const { searchTerm } = useParams<{ searchTerm: string | undefined }>();
   const decodedSearchTerm = decodeURIComponent(searchTerm || "");
