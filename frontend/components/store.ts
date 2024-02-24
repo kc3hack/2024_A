@@ -5,7 +5,7 @@ const initialState = {
   playingMusicId: 0,
   isPlaying: false,
   playbackPosition: 0, // 初期値は0秒
-  newlySelectedMusicId: null as number | null, // 新しく選択した音楽のIDを格納する状態
+  newlySelectedMusicId: 0 as number | null, // 新しく選択した音楽のIDを格納する状態
 };
 
 export type RootState = {
