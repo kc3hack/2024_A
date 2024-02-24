@@ -81,7 +81,7 @@ function localType(value: string) {
       returnType = 6;
       break;
     default:
-      returnType = 0;
+      returnType = -1;
       break;
   }
   return returnType;
