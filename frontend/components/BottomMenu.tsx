@@ -6,7 +6,7 @@ const BottomMenu = () => {
     <div className="bottom-menu">
       <div className="bottom-menu-element hover-icon">
         <div className="add-music">
-          <Link to="/location">
+          <Link to="/register-music/">
             <img src="/math-plus.svg" alt="" className="add-music-button" />
             <br />
             <span>追加</span>
@@ -24,7 +24,7 @@ const BottomMenu = () => {
       </div>
       <div className="bottom-menu-element hover-icon">
         <div className="music">
-          <Link to="/history">
+          <Link to="/history/">
             <img src="/disc.svg" alt="" className="music-button" />
             <br />
             <span>履歴</span>

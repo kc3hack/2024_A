@@ -7,7 +7,6 @@
   justify-content: center;
   padding: var(--padding);
 
-  width: max-content;
   width: 300px;
 }
 
@@ -34,9 +33,3 @@
   cursor: pointer;
   padding-right: 0px;
 }
-
-/* .search-icon {
-    cursor: pointer;
-    padding-top: 7px;
-    width: 24px;
-  } */
