@@ -1,12 +1,29 @@
 .app-container {
   min-height: var(--search-result-page-min-height);
+  margin-bottom: calc(var(--value-bottom-margin) + 30px);
+  margin-left: 50px;
 }
 
-.leftAlign {
+.result-list {
+  position: relative;
+  align-items: center;
+}
+
+.result-element {
+  width: 300px;
+  background: #e3e3e3;
   list-style: none;
-  padding: 0;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+
 }
 
-.leftAlign li {
-  text-align: left;
+.result-element .music-title {
+  font-size: 20px;
+}
+
+.result-element button {
+  margin-left: auto;
 }
