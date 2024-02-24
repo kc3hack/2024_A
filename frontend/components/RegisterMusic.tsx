@@ -5,6 +5,8 @@ import { musicData } from "./data";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import "../styles/RegisterMusic.css";
+
 const RegisterMusic = () => {
   const { searchTerm } = useParams<{ searchTerm: string | undefined }>();
   const decodedSearchTerm = decodeURIComponent(searchTerm || "");
@@ -40,16 +42,21 @@ const RegisterMusic = () => {
   return (
     <div className="app-container">
       <h1 id="top">曲を選択する</h1>
-      <ul id="resultList" className="leftAlign">
+      <ul className="register-list">
         {searchResults.length === 0 ? (
-          <li className="left-align">検索結果がありません</li>
+          <li className="register-nothing">検索結果がありません</li>
         ) : (
           searchResults.map((resultIndex) => (
-            <li key={resultIndex} className="left-top-align">
-              <span>{musicData[resultIndex].title}</span>
-              <button onClick={() => handleButtonClick(resultIndex)}>
-                選択
-              </button>
+            <li key={resultIndex} className="register-element border-animation">
+              <span className="music-title">
+                {musicData[resultIndex].title}
+              </span>
+              <img
+                src="/math-plus.svg"
+                alt=""
+                className="register-music-button"
+                onClick={() => handleButtonClick(resultIndex)}
+              />
             </li>
           ))
         )}

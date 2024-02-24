@@ -12,7 +12,7 @@ const History = () => {
     // ここにボタンが押されたときの処理を追加
   };
   return (
-    <main>
+    <div>
       <Header />
       <h1>ここは履歴のページです</h1>
       <ul id="resultList" className="leftAlign">
@@ -30,7 +30,7 @@ const History = () => {
         )}
       </ul>
       <Footer />
-    </main>
+    </div>
   );
 };
 

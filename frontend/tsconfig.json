@@ -5,6 +5,11 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": ".",
+    "typeRoots": ["node_modules/@types", "types"],
+    "paths": {
+      "use-sound": ["node_modules/use-sound/dist/index"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",

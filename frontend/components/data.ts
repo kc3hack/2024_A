@@ -124,8 +124,8 @@ const localInformation: localComporment[] = [
 ];
 
 // 音楽データの型定義
-interface Song {
-  file: string;
+export interface Song {
+  url: string;
   title: string;
   information: Array<number>;
   id: number;
@@ -133,105 +133,110 @@ interface Song {
 // 完成版の音楽データ
 export const musicData: Song[] = [
   {
-    file: "../public/PressEnter.mp3",
+    url: "/PressEnter.mp3",
     title: "PressEnter",
     information: [9, 3, 1],
     id: 0,
   },
   {
-    file: "../public/Glowing_Moon.mp3",
+    url: "/Glowing_Moon.mp3",
     title: "Glowing_Moon",
     information: [8, 5, 3],
     id: 1,
   },
   {
-    file: "../public/Awayuki.mp3",
+    url: "/Awayuki.mp3",
     title: "Awayuki",
     information: [6, 7, 2],
     id: 2,
   },
   {
-    file: "../public/Conjurer.mp3",
+    url: "/Conjurer.mp3",
     title: "Conjurer",
     information: [5, 8, 0],
     id: 3,
   },
   {
-    file: "../public/Moment_on_The_Floor.mp3",
+    url: "/Moment_on_The_Floor.mp3",
     title: "Moment_on_The_Floor",
     information: [9, 3, 0],
     id: 4,
   },
   {
-    file: "../public/Morning.mp3",
+    url: "/Morning.mp3",
     title: "Morning",
     information: [5, 7, 0],
     id: 5,
   },
   {
-    file: "../public/Parade.mp3",
+    url: "/Parade.mp3",
     title: "Parade",
     information: [9, 3, 4],
     id: 6,
   },
   {
-    file: "../public/しゅわしゅわハニーレモン350ml.mp3",
+    url: "/しゅわしゅわハニーレモン350ml.mp3",
     title: "しゅわしゅわハニーレモン350ml",
     information: [8, 4, 0],
     id: 7,
   },
   {
+<<<<<<< HEAD
     file: "../public/パステルハウス.mp3",
     title: "パステルハウス",
+=======
+    url: "/パステルハウス.mp3",
+    title: "パステルハウス",
+>>>>>>> develop
     information: [7, 6, 0],
     id: 8,
   },
   {
-    file: "../public/ミッドナイト・ジャズ.mp3",
-    title: "ミッドナイト・ジャズ",
+    url: "/ミッドナイト・ジャズ.mp3",
+    title: "ミッドナイト・ジャズ",
     information: [6, 8, 0],
     id: 9,
   },
   {
-    file: "../public/ようこそ　大阪へ.mp3",
+    url: "/ようこそ　大阪へ.mp3",
     title: "ようこそ大阪へ",
     information: [9, 3, 1],
     id: 10,
   },
   {
-    file: "../public/雨響く京都.mp3",
+    url: "/雨響く京都.mp3",
     title: "雨響く京都",
     information: [3, 8, 2],
     id: 11,
   },
   {
-    file: "../public/夏祭りの露店通り.mp3",
+    url: "/夏祭りの露店通り.mp3",
     title: "夏祭りの露店通り",
     information: [8, 4, 0],
     id: 12,
   },
   {
-    file: "../public/週末京都現実逃避.mp3",
+    url: "/週末京都現実逃避.mp3",
     title: "週末京都現実逃避",
     information: [6, 7, 2],
     id: 13,
   },
 ];
+export interface preResultData {
+  id: number;
+  point: number;
+  url: string;
+  title: string;
+  information: Array<number>;
+}
 function searchByInformation(data: Song[], parameters: Array<number>) {
-  interface preResultData {
-    id: number;
-    point: number;
-    file: string;
-    title: string;
-    information: Array<number>;
-  }
   const resultdata: preResultData[] = [];
   for (let index = 0; index < data.length; index++) {
     const element = data[index];
     const a: preResultData = {
       id: index,
       point: Math.random() * 5,
-      file: element.file,
+      url: element.url,
       title: element.title,
       information: element.information,
     };
@@ -254,7 +259,7 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
     }
   }
   resultdata.sort((a, b) => (a.point > b.point ? 1 : -1));
-  console.log(resultdata);
+  // console.log(resultdata);
   return resultdata;
 }
 
@@ -273,8 +278,6 @@ function decisionParameter(weather: string, address: string) {
 export function searchAuto(weather: string, addres: string) {
   return searchByInformation(musicData, decisionParameter(weather, addres));
 }
-
-//console.log(searchAuto("Snow", "大阪府"));
 
 /* 
 天気
@@ -316,5 +319,5 @@ export function getHistory() {
 function historySort():被りを消す
 historyは前から順に曲のidが入っている
 曲名の取り出しはmusicData[id].title;
-ファイルのパスの取り出しはmusicData[id].file
+ファイルのパスの取り出しはmusicData[id].url
 */

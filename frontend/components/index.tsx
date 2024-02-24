@@ -6,19 +6,23 @@ import Search from "../pages/Search";
 import RegisterMusic from "../pages/RegisterMusic";
 import NotFound from "../pages/NotFound";
 import React from "react";
+import { Provider } from "react-redux";
+import { store } from "./store"; // あなたのstoreへのパスに置き換えてください
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/location/" element={<Location />}></Route>
-        <Route path="/history/" element={<History />}></Route>
-        <Route path="/search//*" element={<Search />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-        <Route path="/register-music/" element={<RegisterMusic />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/location/" element={<Location />}></Route>
+          <Route path="/history/" element={<History />}></Route>
+          <Route path="/search//*" element={<Search />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
+          <Route path="/register-music/" element={<RegisterMusic />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 };
 
