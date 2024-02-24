@@ -13,8 +13,8 @@ export const CanvasComponent: React.FC = () => {
 
     const context = canvas.getContext("2d");
     if (!context) return;
-    canvas.width=window.innerWidth;
-    canvas.height=window.innerHeight-570;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight - 570;
     context.clearRect(0, 0, 10000, 10000);
 
     const id = searchAuto("Clouds", "大阪府")[0].id; //idに曲のidを入力
