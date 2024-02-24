@@ -270,7 +270,7 @@ function decisionParameter(weather: string, address: string) {
   //ここからどうしよう
   return returnData;
 }
-export function searchAuto(weather: string, addres: string, ) {
+export function searchAuto(weather: string, addres: string) {
   return searchByInformation(musicData, decisionParameter(weather, addres));
 }
 
@@ -299,17 +299,17 @@ Tornado (竜巻)
 都市で指定
 大阪府、京都府、兵庫県、滋賀県、奈良県、和歌山県の2府4県
 */
-let history:number[]=[]
-export function historyAdd(id:number) {
+let history: number[] = [];
+export function historyAdd(id: number) {
   history.unshift(id);
 }
-export function historySort(){
+export function historySort() {
   history = removeDuplicates(history);
 }
 function removeDuplicates(arr: number[]): number[] {
   return arr.filter((value, index, self) => self.indexOf(value) === index);
 }
-export function getHistory(){
+export function getHistory() {
   return history;
 }
 /* historyAdd(id);曲のidを変数に入れると保存される。
