@@ -44,3 +44,7 @@
   filter: brightness(0) invert(1);
   width: 30px;
 }
+
+.loop-button {
+  width: 40px;
+}
