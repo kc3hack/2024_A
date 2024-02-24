@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1em" height="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" d="M464 210.511V264a112.127 112.127 0 0 1-112 112H78.627l44.686-44.687l-22.626-22.626L56 353.373l-4.415 4.414l-33.566 33.567l74.022 83.276l23.918-21.26L75.63 408H352c79.4 0 144-64.6 144-144v-85.489Z"/>
+  <path fill="currentColor" d="M48 256a112.127 112.127 0 0 1 112-112h273.373l-44.686 44.687l22.626 22.626L456 166.627l4.117-4.116l33.864-33.865l-74.022-83.276l-23.918 21.26L436.37 112H160c-79.4 0-144 64.6-144 144v85.787l32-32Z"/>
+  <text style="fill: rgba(0, 0, 0, 0.8); font-family: Arial, sans-serif; font-size: 25.5px; white-space: pre;" transform="matrix(5.820257, 0, 0, 5.423429, -1072.161499, -1172.126343)" x="193.705" y="271.915" dx="0.507" dy="1.018">AUTO</text>
+  <rect x="-79.889" y="624.697" width="552.014" height="78.919" style="stroke: rgb(0, 0, 0); transform-box: fill-box; transform-origin: 50% 50%; fill: rgba(0, 0, 0, 0.8);" transform="matrix(0.861367, 0.507984, -0.560451, 0.830425, 52.83416, -400.216626)"/>
+</svg>

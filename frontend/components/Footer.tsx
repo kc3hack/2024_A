@@ -1,5 +1,6 @@
 import BottomMenu from "../components/BottomMenu";
 import MusicMenu from "../components/MusicMenu";
+import React from "react";
 
 const Footer = () => {
   return (
