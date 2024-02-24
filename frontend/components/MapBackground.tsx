@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../styles/MapBackground.css"; // 外部のCSSファイルをインポート
 import "../styles/MapBackground.scss";
 
-
 const API_KEY = "api";
 
 const MapBackground = ({
