@@ -28,11 +28,9 @@ a {
 
 @media screen and (max-width: 600px) {
   .top-menu {
-    /* align-items: center; */
     background-color: rgb(64, 125, 190);
     min-height: var(--padding-top-menu);
     position: relative;
-    /* display:block; */
     width: 100%;
     z-index: 9999;
   }
