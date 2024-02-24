@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:kansai@localhost:3307/kansai"
+}
+
+model Location {
+  id      Int      @id @default(autoincrement())
+  long    String
+  lat     String
+  musicID Int
+}
