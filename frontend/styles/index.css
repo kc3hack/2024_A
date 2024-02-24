@@ -37,3 +37,8 @@ footer {
   position: fixed;
   width: 100%;
 }
+
+/* アイコンをホバーしたときのアニメーション設定 */
+footer .hover-icon {
+  transition: all 0.3s 0s ease;;
+}
