@@ -1,14 +1,18 @@
 import { useParams } from "react-router-dom";
 import { musicData } from "./data";
+import { useDispatch } from "react-redux";
 
 const SearchResultPage = () => {
   const { searchTerm } = useParams<{ searchTerm: string | undefined }>();
   const decodedSearchTerm = decodeURIComponent(searchTerm || "");
 
   const searchResults = search(decodedSearchTerm);
+  const dispatch = useDispatch(); // Reduxのdispatch関数を取得
 
   const handleButtonClick = (index: number) => {
     console.log(`ボタンが押されました。曲名: ${musicData[index].title}`);
+    dispatch({ type: "SET_NEWLY_SELECTED_MUSIC_ID", payload: index }); // 再生中の音楽のIDを設定
+
     stop();
   };
 

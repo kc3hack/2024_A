@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../styles/MusicMenu.css";
 import useSound from "use-sound";
-import music from "/Awayuki.mp3";
+import { musicData } from "./data";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "./store"; // あなたのstoreへのパスに置き換えてください
+import { RootState } from "./store";
 
 const MusicMenu = () => {
   const dispatch = useDispatch();
@@ -11,8 +11,14 @@ const MusicMenu = () => {
   const playbackPosition = useSelector(
     (state: RootState) => state.playbackPosition,
   );
-  const [volume, setVolume] = useState(0.5); // 初期音量を0.5（50%）に設定
-  const [play, { stop, sound }] = useSound(music, {
+  const playingMusicId = useSelector(
+    (state: RootState) => state.playingMusicId,
+  );
+  const newlySelectedMusicId = useSelector(
+    (state: RootState) => state.newlySelectedMusicId,
+  );
+  const [volume, setVolume] = useState(0.5);
+  const [play, { stop, sound }] = useSound(musicData[playingMusicId].url, {
     volume,
     seek: playbackPosition,
   });
@@ -26,7 +32,6 @@ const MusicMenu = () => {
   useEffect(() => {
     if (isPlaying) {
       if (sound) {
-        console.log("再生直前時点でのシーク位置:", sound.seek());
         play();
       }
     } else {
@@ -51,7 +56,6 @@ const MusicMenu = () => {
       if (sound && isPlaying) {
         // 音楽が再生中のときだけ再生位置を更新
         dispatch({ type: "SET_PLAYBACK_POSITION", payload: sound.seek() });
-        console.log("再生中の再生位置を保存:", playbackPosition);
       }
     }, 1); // 1m秒ごとに再生位置を更新(最短)
 
@@ -59,6 +63,20 @@ const MusicMenu = () => {
       clearInterval(interval); // コンポーネントがアンマウントされるときにタイマーをクリア
     };
   }, [dispatch, sound, isPlaying]); // isPlayingを依存性配列に追加
+
+  useEffect(() => {
+    if (playingMusicId !== newlySelectedMusicId) {
+      // 再生中の音楽のIDが新しく選択された音楽のIDと異なる場合
+      dispatch({
+        type: "SET_PLAYING_MUSIC_ID",
+        payload: newlySelectedMusicId,
+      });
+      stop();
+      dispatch({ type: "SET_PLAYBACK_POSITION", payload: 0 });
+      play();
+      console.log("現在", playingMusicId, "新規", newlySelectedMusicId);
+    }
+  }, [playingMusicId, newlySelectedMusicId, play, stop, dispatch]);
 
   const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setVolume(Number(event.target.value) / 100);
