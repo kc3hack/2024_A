@@ -36,7 +36,7 @@ const SearchResultPage = () => {
       <hr />
       <ul className="result-list">
         {searchResults.length === 0 ? (
-          <li className="left-align">検索結果がありません</li>
+          <li className="result-nothing">検索結果がありません</li>
         ) : (
           searchResults.map((resultIndex) => (
             <li key={resultIndex} className="result-element border-animation">

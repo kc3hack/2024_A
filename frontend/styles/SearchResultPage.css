@@ -5,6 +5,11 @@
   min-height: var(--search-result-page-min-height);
 }
 
+.result-nothing {
+  list-style: none;
+  margin-top: 20px;
+}
+
 .result-list {
   align-items: center;
   position: relative;
