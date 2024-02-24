@@ -19,7 +19,7 @@ function weatherType(value: string) {
       returnType = 4;
       break;
     default:
-      returnType = -1;
+      returnType = 0;
       break;
   }
   return returnType;
@@ -36,19 +36,19 @@ const weatherInformation: weatherComponent[] = [
     weather: "天気",
   },
   {
-    parameters: [5, 2],
+    parameters: [8, 4],
     weather: "晴れ",
   },
   {
-    parameters: [3, 3],
+    parameters: [6, 6],
     weather: "曇り",
   },
   {
-    parameters: [2, 4],
+    parameters: [3, 8],
     weather: "雨",
   },
   {
-    parameters: [5, 4],
+    parameters: [4, 7],
     weather: "雪",
   },
 ];
@@ -130,31 +130,91 @@ export interface Song {
   information: Array<number>;
   id: number;
 }
-// サンプルの音楽データ
+// 完成版の音楽データ
 export const musicData: Song[] = [
   {
     url: "/PressEnter.mp3",
     title: "PressEnter",
-    information: [1, 2, 3],
+    information: [9, 3, 1],
     id: 0,
   },
   {
     url: "/Glowing_Moon.mp3",
     title: "Glowing_Moon",
-    information: [2, 2, 1],
+    information: [8, 5, 3],
     id: 1,
   },
   {
     url: "/Awayuki.mp3",
     title: "Awayuki",
-    information: [4, 2, 4],
+    information: [6, 7, 2],
     id: 2,
   },
   {
     url: "/Conjurer.mp3",
     title: "Conjurer",
-    information: [7, 2, 6],
+    information: [5, 8, 0],
     id: 3,
+  },
+  {
+    file: "../public/Moment_on_The_Floor.mp3",
+    title: "Moment_on_The_Floor",
+    information: [9, 3, 0],
+    id: 4,
+  },
+  {
+    file: "../public/Morning.mp3",
+    title: "Morning",
+    information: [5, 7, 0],
+    id: 5,
+  },
+  {
+    file: "../public/Parade.mp3",
+    title: "Parade",
+    information: [9, 3, 4],
+    id: 6,
+  },
+  {
+    file: "../public/しゅわしゅわハニーレモン350ml.mp3",
+    title: "しゅわしゅわハニーレモン350ml",
+    information: [8, 4, 0],
+    id: 7,
+  },
+  {
+    file: "../public/パステルハウス.mp3",
+    title: "パステルハウス",
+    information: [7, 6, 0],
+    id: 8,
+  },
+  {
+    file: "../public/ミッドナイト・ジャズ.mp3",
+    title: "ミッドナイト・ジャズ",
+    information: [6, 8, 0],
+    id: 9,
+  },
+  {
+    file: "../public/ようこそ　大阪へ.mp3",
+    title: "ようこそ大阪へ",
+    information: [9, 3, 1],
+    id: 10,
+  },
+  {
+    file: "../public/雨響く京都.mp3",
+    title: "雨響く京都",
+    information: [3, 8, 2],
+    id: 11,
+  },
+  {
+    file: "../public/夏祭りの露店通り.mp3",
+    title: "夏祭りの露店通り",
+    information: [8, 4, 0],
+    id: 12,
+  },
+  {
+    file: "../public/週末京都現実逃避.mp3",
+    title: "週末京都現実逃避",
+    information: [6, 7, 2],
+    id: 13,
   },
 ];
 function searchByInformation(data: Song[], parameters: Array<number>) {
@@ -170,8 +230,8 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
     const element = data[index];
     const a: preResultData = {
       id: index,
-      point: 0,
-      url: element.url,
+      point: Math.random() * 5,
+      file: element.file,
       title: element.title,
       information: element.information,
     };
@@ -187,7 +247,7 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
       }
     }
     if (element.information[2] == parameters[2]) {
-      resultdata[index].point /= 2;
+      resultdata[index].point /= 10;
       resultdata[index].information[2] = 5;
     } else {
       resultdata[index].information[2] = 0;
@@ -210,7 +270,7 @@ function decisionParameter(weather: string, address: string) {
   //ここからどうしよう
   return returnData;
 }
-export function searchAuto(weather: string, addres: string, musicData: Song[]) {
+export function searchAuto(weather: string, addres: string) {
   return searchByInformation(musicData, decisionParameter(weather, addres));
 }
 
@@ -236,4 +296,23 @@ Tornado (竜巻)
 地域
 都市で指定
 大阪府、京都府、兵庫県、滋賀県、奈良県、和歌山県の2府4県
+*/
+let history: number[] = [];
+export function historyAdd(id: number) {
+  history.unshift(id);
+}
+export function historySort() {
+  history = removeDuplicates(history);
+}
+function removeDuplicates(arr: number[]): number[] {
+  return arr.filter((value, index, self) => self.indexOf(value) === index);
+}
+export function getHistory() {
+  return history;
+}
+/* historyAdd(id);曲のidを変数に入れると保存される。
+function historySort():被りを消す
+historyは前から順に曲のidが入っている
+曲名の取り出しはmusicData[id].title;
+ファイルのパスの取り出しはmusicData[id].file
 */
