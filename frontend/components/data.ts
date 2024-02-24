@@ -181,7 +181,7 @@ export const musicData: Song[] = [
     id: 7,
   },
   {
-    file: "../public/パステルハウス.mp3",
+    file: "../public/パステルハウス.mp3",
     title: "パステルハウス",
     information: [7, 6, 0],
     id: 8,
