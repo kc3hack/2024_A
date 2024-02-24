@@ -50,7 +50,7 @@ footer .hover-icon {
 }
 
 @media screen and (max-width: 600px) {
-  *{
+  * {
     --padding-top-menu: 140px;
   }
 }
