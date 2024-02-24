@@ -35,12 +35,12 @@
 
 /* 再生ボタン */
 .result-element .play-music-button {
+  cursor: pointer;
   margin-left: 300px;
   margin-top: -18px;
   position: absolute;
   transition: 0.3s;
   width: 60px;
-  cursor: pointer;
 }
 
 .result-element .play-music-button:hover {

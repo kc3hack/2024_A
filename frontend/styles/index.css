@@ -22,8 +22,8 @@
   /*検索結果ページの最小の高さ*/
   --search-result-page-min-height: 561px;
 
-    /*曲登録ページの最小の高さ*/
-    --music-register-page-min-height: 561px;
+  /*曲登録ページの最小の高さ*/
+  --music-register-page-min-height: 561px;
 }
 
 header {
