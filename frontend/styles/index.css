@@ -20,7 +20,7 @@
   --value-bottom-margin: 100px;
 
   /*検索結果ページの最小の高さ*/
-  --search-result-page-min-height: 561px
+  --search-result-page-min-height: 561px;
 }
 
 header {

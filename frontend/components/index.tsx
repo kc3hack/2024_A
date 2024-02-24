@@ -5,7 +5,6 @@ import Location from "../pages/Location";
 import Search from "../pages/Search";
 import RegisterMusic from "../pages/RegisterMusic";
 import NotFound from "../pages/NotFound";
-import SearchResultPage from "./SearchResultPage";
 import React from "react";
 
 const App = () => {
