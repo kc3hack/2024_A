@@ -2,7 +2,7 @@
   align-items: center;
   background-color: rgb(64, 125, 190);
   display: flex;
-  min-height: 70px;
+  min-height: var(--padding-top-menu);
   position: relative;
   z-index: 9999;
 }
@@ -13,6 +13,11 @@
   margin-left: 30px;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .top-menu-items {
   align-items: center;
   display: flex;
@@ -21,102 +26,27 @@
   margin-right: 30px;
 }
 
-.search-bar {
-  --padding: 8px;
-  align-items: center;
-  background: #f6f6f6;
-  border-radius: 28px;
-  display: flex;
-  justify-content: center;
-  padding: var(--padding);
+@media screen and (max-width: 600px) {
+  .top-menu {
+    background-color: rgb(64, 125, 190);
+    min-height: var(--padding-top-menu);
+    position: relative;
+    width: 100%;
+    z-index: 9999;
+  }
 
-  width: max-content;
-  width: 300px;
-}
-
-.search-box {
-  background: transparent;
-  border: none;
-  color: #333333;
-  flex: 1;
-  font-size: 16px;
-  margin-left: var(--padding);
-  outline: none;
-}
-
-.search-box[type="search"]::-webkit-search-cancel-button {
-  height: 16px;
-  width: 16px;
-}
-
-.search-box::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  background-image: url(/close.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: pointer;
-  padding-right: 0px;
-}
-
-.search-icon {
-  width: 20px;
-}
-
-.open-search-bar {
-  display: none;
-}
-
-.setting-icon {
-  cursor: pointer;
-  filter: brightness(0) invert(1);
-  padding-top: 5px;
-  width: 20px;
-}
-
-.setting-icon:hover {
-  filter: brightness(0);
-}
-
-/* @media screen and (max-width: 650px) {
-  .search-bar {
-    display: none;
+  .title {
+    left: 50%;
+    margin-left: 0px;
+    position: absolute;
+    top: 10%;
+    transform: translateX(-50%);
   }
 
   .top-menu-items {
-    gap: 10px;
+    bottom: 20%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
   }
-
-  .open-search-bar {
-    display: block;
-  }
-
-  .open-search-bar .search-icon {
-    cursor: pointer;
-    filter: brightness(0) invert(1);
-    padding-top: 7px;
-    width: 24px;
-  }
-
-  .open-search-bar .cancel-icon {
-    display: none;
-  }
-
-  .open-search-bar .search-icon:hover {
-    filter: brightness(0);
-  }
-
-  .open-search-bar-active .search-icon {
-    display: none;
-  }
-
-  .open-search-bar-active .cancel-icon {
-    cursor: pointer;
-    filter: brightness(0) invert(1);
-    padding-top: 7px;
-    width: 24px;
-  }
-
-  .open-search-bar .cancel-icon:hover {
-    filter: brightness(0);
-  }
-} */
+}

@@ -6,13 +6,15 @@ import React from "react";
 
 const Search = () => {
   return (
-    <main>
+    <div>
       <Header />
-      <Routes>
-        <Route path=":searchTerm" element={<SearchResultPage />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path=":searchTerm" element={<SearchResultPage />} />
+        </Routes>
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 };
 

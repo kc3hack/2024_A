@@ -12,8 +12,9 @@
 .bottom-menu-element {
   filter: brightness(0) invert(1);
   text-align: center;
+  transition: scale 0.3s;
 }
 
 .bottom-menu-element:hover {
-  filter: brightness(0);
+  transform: scale(1.1);
 }
