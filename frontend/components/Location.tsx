@@ -3,11 +3,15 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L, { DragEndEvent } from "leaflet";
 import { deleteLocation, pointData } from "../api-client/location";
 import { createLocation, getAllLocations } from "../api-client/location";
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
+import { useNavigate } from "react-router-dom";
+import "../styles/Map.css";
 
 L.Icon.Default.imagePath =
   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/";
 
-const Weather = () => {
+const Location = () => {
   const [currentPosition, setCurrentPosition] = useState<[number, number]>([
     35.173, 136.97,
   ]);
@@ -25,7 +29,11 @@ const Weather = () => {
     locations.reduce((acc, location) => ({ ...acc, [location.id]: true }), {}),
   );
 
-  const musicID: number = 999;
+  const selectedMusicId = useSelector(
+    (state: RootState) => state.selectedMusicId,
+  );
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getCurrentPosition();
@@ -104,9 +112,12 @@ const Weather = () => {
 
   const registerMusicHandler = () => {
     console.log("音楽を登録します");
-    createPoint(markerPosition, musicID);
-  };
+    navigate(`/register-music/`);
 
+    if (selectedMusicId !== null) {
+      createPoint(markerPosition, selectedMusicId);
+    }
+  };
   return (
     <div>
       <div className="map">
@@ -156,4 +167,4 @@ const Weather = () => {
   );
 };
 
-export default Weather;
+export default Location;
