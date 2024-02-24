@@ -9,7 +9,7 @@ const BottomMenu = () => {
           <Link to="/location">
             <img src="/math-plus.svg" alt="" className="add-music-button" />
             <br />
-            <span>地点の追加</span>
+            <span>追加</span>
           </Link>
         </div>
       </div>
@@ -27,7 +27,7 @@ const BottomMenu = () => {
           <Link to="/history">
             <img src="/disc.svg" alt="" className="music-button" />
             <br />
-            <span>音楽の履歴</span>
+            <span>履歴</span>
           </Link>
         </div>
       </div>
