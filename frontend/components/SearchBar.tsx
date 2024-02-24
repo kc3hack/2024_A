@@ -7,7 +7,12 @@ const Searchbar = () => {
 
   const handleSearch = (event: React.FormEvent) => {
     event.preventDefault();
-    navigate(`/search/${encodeURIComponent(searchTerm)}`);
+    if (searchTerm.trim() !== "") {
+      navigate(`/search/${encodeURIComponent(searchTerm)}`);
+    } else {
+      // 何も入力されていないときの動作をここに書く
+      navigate(`/search/all`);
+    }
   };
 
   return (

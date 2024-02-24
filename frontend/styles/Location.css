@@ -19,8 +19,9 @@
 }
 
 .leaflet-container {
-  height: 400px;
+  height: 750px;
   margin-left: auto;
+  margin-top: 80px;
   position: relative;
   width: 100%;
   z-index: 0;
@@ -44,8 +45,9 @@
 
 .handleReturnToCurrentPosition {
   left: center;
+  margin-left: 10px;
   position: absolute;
-  top: 100px;
+  top: 200px;
   z-index: 0;
   /* stylelint-disable-next-line prettier/prettier */
 }
