@@ -9,11 +9,15 @@ import React from "react";
 
 const Location = () => {
   return (
-    <Provider store={store}>
-      <Header />
-      <RegisterMusic />
-      <Footer />
-    </Provider>
+    <div>
+      <Provider store={store}>
+        <Header />
+        <main>
+          <RegisterMusic />
+        </main>
+        <Footer />
+      </Provider>
+    </div>
   );
 };
 

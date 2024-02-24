@@ -5,14 +5,16 @@ import "../styles/NotFound.css";
 
 const NotFound = () => {
   return (
-    <>
+    <div>
       <Header />
-      <div className="not-found">
-        <h1>NotFound</h1>
-        <p>ページが見つかりませんでした。</p>
-      </div>
+      <main>
+        <div className="not-found">
+          <h1>NotFound</h1>
+          <p>ページが見つかりませんでした。</p>
+        </div>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
