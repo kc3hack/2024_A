@@ -230,7 +230,7 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
     const element = data[index];
     const a: preResultData = {
       id: index,
-      point: Math.random()*5,
+      point: Math.random() * 5,
       file: element.file,
       title: element.title,
       information: element.information,
