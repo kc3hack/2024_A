@@ -1,16 +1,17 @@
 import { useParams } from "react-router-dom";
 import { musicData } from "./data";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import useSound from "use-sound";
+
 const SearchResultPage = () => {
   const { searchTerm } = useParams<{ searchTerm: string | undefined }>();
   const decodedSearchTerm = decodeURIComponent(searchTerm || "");
 
-  // 検索結果を取得
   const searchResults = search(decodedSearchTerm);
 
   const handleButtonClick = (index: number) => {
     console.log(`ボタンが押されました。曲名: ${musicData[index].title}`);
-    // ここにボタンが押されたときの処理を追加
+    stop();
   };
 
   function search(keyWord: string): number[] {

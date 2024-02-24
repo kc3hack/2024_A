@@ -124,8 +124,8 @@ const localInformation: localComporment[] = [
 ];
 
 // 音楽データの型定義
-interface Song {
-  file: string;
+export interface Song {
+  url: string;
   title: string;
   information: Array<number>;
   id: number;
@@ -133,25 +133,25 @@ interface Song {
 // サンプルの音楽データ
 export const musicData: Song[] = [
   {
-    file: "../public/PressEnter.mp3",
+    url: "/PressEnter.mp3",
     title: "PressEnter",
     information: [1, 2, 3],
     id: 0,
   },
   {
-    file: "../public/Glowing_Moon.mp3",
+    url: "/Glowing_Moon.mp3",
     title: "Glowing_Moon",
     information: [2, 2, 1],
     id: 1,
   },
   {
-    file: "../public/Awayuki.mp3",
+    url: "/Awayuki.mp3",
     title: "Awayuki",
     information: [4, 2, 4],
     id: 2,
   },
   {
-    file: "../public/Conjurer.mp3",
+    url: "/Conjurer.mp3",
     title: "Conjurer",
     information: [7, 2, 6],
     id: 3,
@@ -161,7 +161,7 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
   interface preResultData {
     id: number;
     point: number;
-    file: string;
+    url: string;
     title: string;
     information: Array<number>;
   }
@@ -171,7 +171,7 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
     const a: preResultData = {
       id: index,
       point: 0,
-      file: element.file,
+      url: element.url,
       title: element.title,
       information: element.information,
     };

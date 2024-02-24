@@ -19,8 +19,9 @@
 }
 
 .leaflet-container {
-  height: 400px;
+  height: 500px;
   margin-left: auto;
+  margin-top: auto;
   position: relative;
   width: 100%;
   z-index: 0;

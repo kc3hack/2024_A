@@ -6,6 +6,7 @@ import { createLocation, getAllLocations } from "../api-client/location";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 import { useNavigate } from "react-router-dom";
+import "../styles/Map.css";
 
 L.Icon.Default.imagePath =
   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/";
