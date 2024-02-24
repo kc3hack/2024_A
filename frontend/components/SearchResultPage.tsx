@@ -10,15 +10,12 @@ const SearchResultPage = () => {
   const dispatch = useDispatch(); // Reduxのdispatch関数を取得
 
   const handleButtonClick = (index: number) => {
-    console.log(`ボタンが押されました。曲名: ${musicData[index].title}`);
     dispatch({ type: "SET_NEWLY_SELECTED_MUSIC_ID", payload: index }); // 再生中の音楽のIDを設定
-
     stop();
   };
 
   function search(keyWord: string): number[] {
     const result: number[] = [];
-    console.log("検索キーワード: " + keyWord);
     // 何も入力していない時は全曲を表示
     if (keyWord === "all") return Array.from(Array(musicData.length).keys());
 

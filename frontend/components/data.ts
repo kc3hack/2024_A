@@ -194,7 +194,7 @@ function searchByInformation(data: Song[], parameters: Array<number>) {
     }
   }
   resultdata.sort((a, b) => (a.point > b.point ? 1 : -1));
-  console.log(resultdata);
+  // console.log(resultdata);
   return resultdata;
 }
 
@@ -213,8 +213,6 @@ function decisionParameter(weather: string, address: string) {
 export function searchAuto(weather: string, addres: string, musicData: Song[]) {
   return searchByInformation(musicData, decisionParameter(weather, addres));
 }
-
-console.log(searchAuto("Snow", "大阪府", musicData));
 
 /* 
 天気
