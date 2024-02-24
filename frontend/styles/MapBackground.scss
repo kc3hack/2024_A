@@ -1,0 +1,176 @@
+$bgcolor: #f0dfd0;
+$transparent: rgba(255, 255, 255, 0);
+
+$color-1: #cfd9d7;
+$color-2: #7fcedd;
+
+$size: 3em;
+$big-size: $size * 2;
+$min: $size * 0.3;
+$max: $size * 0.5;
+
+.map-background.rain {
+  background:
+    linear-gradient(68deg, $color-1 $min, $transparent $min * 1.1) $size -#{$size},
+    linear-gradient(-68deg, $color-1 $min, $transparent $min * 1.1) -#{$size} -#{$size},
+    radial-gradient(circle, $color-1 $min, $transparent $min * 1.1) 0 0,
+    linear-gradient(68deg, $color-2 $min, $transparent $min * 1.1) 0 0,
+    linear-gradient(-68deg, $color-2 $min, $transparent $min * 1.1) 0 0,
+    radial-gradient(circle, $color-2 $min, $transparent $min * 1.1) $size $size;
+  background-size: $big-size $big-size;
+  background-color: $bgcolor;
+  background-repeat: repeat;
+  font:
+    14px/2 "Trebuchet MS",
+    Verdana,
+    sans-serif;
+}
+
+.map-background.cloud {
+  background: radial-gradient(black 3px, transparent 4px),
+    radial-gradient(black 3px, transparent 4px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(
+      45deg,
+      transparent 74px,
+      transparent 75px,
+      #a4a4a4 75px,
+      #a4a4a4 76px,
+      transparent 77px,
+      transparent 109px
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 75px,
+      transparent 76px,
+      #a4a4a4 76px,
+      #a4a4a4 77px,
+      transparent 78px,
+      transparent 109px
+    ),
+    #fff;
+  background-size:
+    109px 109px,
+    109px 109px,
+    100% 6px,
+    109px 109px,
+    109px 109px;
+  background-position:
+    54px 55px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px;
+}
+
+$softPink: #f9d8d4;
+$yellow: #f9a734;
+$DarkYellow: #fb8b24;
+$green: #36964c;
+$DarkGreen: #286e38;
+
+/* Background styles */
+
+.map-background.clear {
+  background:
+  /* Pineapple details */
+    radial-gradient(
+      circle closest-side at 50px 50px,
+      $DarkYellow 3px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 40px 60px,
+      $DarkYellow 3px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 60px 60px,
+      $DarkYellow 3px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 50px 70px,
+      $DarkYellow 3px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 150px 165px,
+      $DarkYellow 3px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 140px 175px,
+      $DarkYellow 3px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 160px 175px,
+      $DarkYellow 3px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 150px 185px,
+      $DarkYellow 3px,
+      transparent 0
+    ),
+    /* Pineapple base */
+      radial-gradient(
+        ellipse closest-side at 50px 60px,
+        $yellow 18px,
+        transparent 0
+      ),
+    radial-gradient(
+      ellipse closest-side at 150px 175px,
+      $yellow 18px,
+      transparent 0
+    ),
+    /* Pineapple leafs */
+      radial-gradient(
+        circle closest-side at 30px 40px,
+        $softPink 15px,
+        transparent 0
+      ),
+    radial-gradient(
+      circle closest-side at 40px 35px,
+      $green 15px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 70px 40px,
+      $softPink 15px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 60px 35px,
+      $DarkGreen 15px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 130px 155px,
+      $softPink 15px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle closest-side at 140px 150px,
+      $green 15px,
+      transparent 0
+    ),
+    radial-gradient(circle at 170px 155px, $softPink 15px, transparent 0),
+    radial-gradient(circle at 160px 150px, $DarkGreen 15px, transparent 0);
+  background-color: $softPink;
+  background-size: 180px 210px;
+  animation: animatedBackground 0.5s cubic-bezier(0.61, -0.64, 0.58, 1.46)
+    forwards;
+}
+
+/* Animation */
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 50%;
+  }
+  to {
+    background-position: 0 0;
+  }
+}

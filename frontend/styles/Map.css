@@ -3,13 +3,6 @@
   width: 100%;
 }
 
-.map-background {
-  background-color: aquamarine;
-  min-height: var(--map-min-height);
-  position: absolute;
-  width: 100%;
-}
-
 .map-main {
   background-color: blueviolet;
   margin-left: 20%;

@@ -79,6 +79,8 @@ const Weather = () => {
       const data = await response.json();
       setWeather(data);
       setLoading(false);
+      //天気データの確認
+      console.log(data.weather[0].main);
     } catch (error) {
       console.error("Error fetching weather data:", error);
       setLoading(false);
