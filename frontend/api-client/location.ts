@@ -69,3 +69,18 @@ export async function deleteLocation(id: number): Promise<pointData> {
   });
   return response;
 }
+
+export async function getReverseGeocoding(
+  lat: number,
+  long: number,
+): Promise<string> {
+  const response = await fetch(
+    `https://192.168.11.14:3000/get-reverse-geocoding?lat=${lat}&long=${long}`,
+  ).then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  });
+  return response;
+}

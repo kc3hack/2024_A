@@ -4,6 +4,7 @@ import useSound from "use-sound";
 import { musicData, searchAuto } from "./data";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store";
+import { getReverseGeocoding } from "../api-client/location";
 
 const MusicMenu = () => {
   const dispatch = useDispatch();
@@ -44,11 +45,19 @@ const MusicMenu = () => {
   });
   useEffect(() => {
     if (isAutoPlay) {
-      // searchAuto関数を呼び出して自動再生リストを取得
-      const list = searchAuto("Clear", "大阪府");
-      dispatch({ type: "SET_AUTO_GENERATED_LIST", payload: list });
+      // ブラウザの Geolocation API を使用して現在地を取得
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const { latitude, longitude } = position.coords;
+
+        // 取得した緯度と経度を getReverseGeocoding 関数に渡す
+        const location = await getReverseGeocoding(latitude, longitude);
+        console.log(location);
+        // searchAuto関数を呼び出して自動再生リストを取得
+        const list = searchAuto("Clear", "大阪府");
+        dispatch({ type: "SET_AUTO_GENERATED_LIST", payload: list });
+      });
     }
-  }, [isAutoPlay]);
+  }, [isAutoPlay, dispatch]);
 
   useEffect(() => {
     if (sound) {

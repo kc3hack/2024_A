@@ -55,11 +55,24 @@ async function deleteLocation(req: express.Request, res: express.Response) {
   res.json(location);
 }
 
+async function getReverseGeocoding(
+  req: express.Request,
+  res: express.Response,
+) {
+  const long = req.query.long;
+  const lat = req.query.lat;
+  const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}&zoom=18&addressdetails=1`;
+  const response = await fetch(url);
+  const data = await response.json();
+  const province = data.address.province;
+  res.json(province);
+}
+
 app.get('/get-all-locations', getAllLocations);
 app.get('/get-location/:id', getLocation);
 app.post('/create-location', createLocation);
 app.delete('/delete-location/:id', deleteLocation);
-
+app.get('/get-reverse-geocoding', getReverseGeocoding);
 // SSL証明書と秘密鍵の読み込み
 const options = {
   cert: fs.readFileSync('../certs/install.pem'),
