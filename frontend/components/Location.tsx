@@ -132,7 +132,6 @@ const Location = () => {
           />
           <Marker
             position={markerPosition}
-            draggable={true}
             eventHandlers={{ dragend: handleMarkerDragEnd }}
             zIndexOffset={1000}
           >

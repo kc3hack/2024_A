@@ -39,6 +39,7 @@ const MusicMenu = () => {
         );
         const nextMusic = autoPlayList[currentIndex + 1] || autoPlayList[0]; // If there is no next song, play the first song
         dispatch({ type: "SET_PLAYING_MUSIC_ID", payload: nextMusic.id }); // playingMusicIdを更新
+        console.log(musicData[nextMusic.id].title);
         dispatch({ type: "SET_PLAYBACK_POSITION", payload: 0 }); // playbackPositionを0にリセット
       }
     },
@@ -47,14 +48,18 @@ const MusicMenu = () => {
     if (isAutoPlay) {
       // ブラウザの Geolocation API を使用して現在地を取得
       navigator.geolocation.getCurrentPosition(async (position) => {
-        const { latitude, longitude } = position.coords;
+        try {
+          const { latitude, longitude } = position.coords;
 
-        // 取得した緯度と経度を getReverseGeocoding 関数に渡す
-        const location = await getReverseGeocoding(latitude, longitude);
-        console.log(location);
-        // searchAuto関数を呼び出して自動再生リストを取得
-        const list = searchAuto("Clear", "大阪府");
-        dispatch({ type: "SET_AUTO_GENERATED_LIST", payload: list });
+          // 取得した緯度と経度を getReverseGeocoding 関数に渡す
+          const location = await getReverseGeocoding(latitude, longitude);
+          // searchAuto関数を呼び出して自動再生リストを取得
+          const list = searchAuto("Clear", location);
+          dispatch({ type: "SET_AUTO_GENERATED_LIST", payload: list });
+          console.log(location);
+        } catch (error) {
+          console.error(error); // エラーをログに出力
+        }
       });
     }
   }, [isAutoPlay, dispatch]);
@@ -77,6 +82,8 @@ const MusicMenu = () => {
 
   useEffect(() => {
     return () => {
+      if (isAutoPlay)
+        dispatch({ type: "SET_PLAYING_MUSIC_ID", payload: firstMusic.id });
       stop();
     };
   }, [stop]);
@@ -101,7 +108,9 @@ const MusicMenu = () => {
   }, [dispatch, sound, isPlaying]); // isPlayingを依存性配列に追加
 
   useEffect(() => {
-    if (playingMusicId !== newlySelectedMusicId) {
+    if (isAutoPlay) {
+      dispatch({ type: "SET_PLAYING_MUSIC_ID", payload: firstMusic.id });
+    } else if (playingMusicId !== newlySelectedMusicId) {
       // 再生中の音楽のIDが新しく選択された音楽のIDと異なる場合
       dispatch({
         type: "SET_PLAYING_MUSIC_ID",

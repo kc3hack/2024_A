@@ -59,13 +59,25 @@ async function getReverseGeocoding(
   req: express.Request,
   res: express.Response,
 ) {
-  const long = req.query.long;
-  const lat = req.query.lat;
-  const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}&zoom=18&addressdetails=1`;
-  const response = await fetch(url);
-  const data = await response.json();
-  const province = data.address.province;
-  res.json(province);
+  try {
+    const long = req.query.long;
+    const lat = req.query.lat;
+    const url = `https://map.yahooapis.jp/geoapi/V1/reverseGeoCoder?lat=${lat}&lon=${long}&appid=dj00aiZpPUcxOVlUZDNueTN5aSZzPWNvbnN1bWVyc2VjcmV0Jng9NDY-&output=json`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const prefectureElement = data.Feature[0].Property.AddressElement.find(
+      (element: { Level: string; Name: string }) =>
+        element.Level === 'prefecture',
+    );
+
+    const prefecture = prefectureElement.Name;
+    res.json(prefecture);
+  } catch (e) {
+    console.log(e);
+    res
+      .status(500)
+      .json({ error: 'An error occurred while getting all locations.' });
+  }
 }
 
 app.get('/get-all-locations', getAllLocations);
