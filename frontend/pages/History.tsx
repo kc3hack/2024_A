@@ -6,7 +6,7 @@ import { musicData } from "../components/data";
 //import { historyAdd } from "../components/data";
 const History = () => {
   historySort();
-  const historyID:number[]=getHistory();
+  const historyID: number[] = getHistory();
   const handleButtonClick = (index: number) => {
     console.log(`ボタンが押されました。曲名: ${musicData[index].title}`);
     // ここにボタンが押されたときの処理を追加
