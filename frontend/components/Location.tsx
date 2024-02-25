@@ -134,6 +134,7 @@ const Location = () => {
             position={markerPosition}
             eventHandlers={{ dragend: handleMarkerDragEnd }}
             zIndexOffset={1000}
+            draggable={true}
           >
             <Popup>
               <div>

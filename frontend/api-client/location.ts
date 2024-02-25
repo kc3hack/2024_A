@@ -7,7 +7,7 @@ export interface pointData {
 
 export async function getLocation(id: number): Promise<pointData> {
   const response = await fetch(
-    `https://192.168.11.14:3000/get-location/${id}`,
+    `https://192.168.37.141:3000/get-location/${id}`,
   ).then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok");
@@ -19,7 +19,7 @@ export async function getLocation(id: number): Promise<pointData> {
 
 export async function getAllLocations(): Promise<pointData[]> {
   const response = await fetch(
-    "https://192.168.11.14:3000/get-all-locations",
+    "https://192.168.37.141:3000/get-all-locations",
   ).then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok");
@@ -40,7 +40,7 @@ export async function createLocation(
     lat: lat.toString(),
     musicID: musicID,
   };
-  const response = await fetch("https://192.168.11.14:3000/create-location", {
+  const response = await fetch("https://192.168.37.141:3000/create-location", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export async function createLocation(
 
 export async function deleteLocation(id: number): Promise<pointData> {
   const response = await fetch(
-    `https://192.168.11.14:3000/delete-location/${id}`,
+    `https://192.168.37.141:3000/delete-location/${id}`,
     {
       method: "DELETE",
     },
@@ -75,7 +75,7 @@ export async function getReverseGeocoding(
   long: number,
 ): Promise<string> {
   const response = await fetch(
-    `https://192.168.11.14:3000/get-reverse-geocoding?lat=${lat}&long=${long}`,
+    `https://192.168.37.141:3000/get-reverse-geocoding?lat=${lat}&long=${long}`,
   ).then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok");

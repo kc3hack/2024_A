@@ -87,11 +87,11 @@ app.delete('/delete-location/:id', deleteLocation);
 app.get('/get-reverse-geocoding', getReverseGeocoding);
 // SSL証明書と秘密鍵の読み込み
 const options = {
-  cert: fs.readFileSync('../certs/install.pem'),
-  key: fs.readFileSync('../certs/install-key.pem'),
+  cert: fs.readFileSync('../certs/kansai.local.pem'),
+  key: fs.readFileSync('../certs/kansai.local-key.pem'),
 };
 
 // HTTPSサーバーの作成
-https.createServer(options, app).listen(3000, '192.168.11.14', () => {
-  console.log('HTTPS Server is running on https://192.168.11.14:3000');
+https.createServer(options, app).listen(3000, '192.168.37.141', () => {
+  console.log('HTTPS Server is running on https://192.168.37.141:3000');
 });
