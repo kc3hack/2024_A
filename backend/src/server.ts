@@ -55,18 +55,43 @@ async function deleteLocation(req: express.Request, res: express.Response) {
   res.json(location);
 }
 
+async function getReverseGeocoding(
+  req: express.Request,
+  res: express.Response,
+) {
+  try {
+    const long = req.query.long;
+    const lat = req.query.lat;
+    const url = `https://map.yahooapis.jp/geoapi/V1/reverseGeoCoder?lat=${lat}&lon=${long}&appid=dj00aiZpPUcxOVlUZDNueTN5aSZzPWNvbnN1bWVyc2VjcmV0Jng9NDY-&output=json`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const prefectureElement = data.Feature[0].Property.AddressElement.find(
+      (element: { Level: string; Name: string }) =>
+        element.Level === 'prefecture',
+    );
+
+    const prefecture = prefectureElement.Name;
+    res.json(prefecture);
+  } catch (e) {
+    console.log(e);
+    res
+      .status(500)
+      .json({ error: 'An error occurred while getting all locations.' });
+  }
+}
+
 app.get('/get-all-locations', getAllLocations);
 app.get('/get-location/:id', getLocation);
 app.post('/create-location', createLocation);
 app.delete('/delete-location/:id', deleteLocation);
-
+app.get('/get-reverse-geocoding', getReverseGeocoding);
 // SSL証明書と秘密鍵の読み込み
 const options = {
-  cert: fs.readFileSync('../certs/install.pem'),
-  key: fs.readFileSync('../certs/install-key.pem'),
+  cert: fs.readFileSync('../certs/kansai.local.pem'),
+  key: fs.readFileSync('../certs/kansai.local-key.pem'),
 };
 
 // HTTPSサーバーの作成
-https.createServer(options, app).listen(3000, '192.168.11.14', () => {
-  console.log('HTTPS Server is running on https://192.168.11.14:3000');
+https.createServer(options, app).listen(3000, '192.168.37.141', () => {
+  console.log('HTTPS Server is running on https://192.168.37.141:3000');
 });

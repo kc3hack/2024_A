@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L, { DragEndEvent } from "leaflet";
-import { deleteLocation, pointData } from "../api-client/location";
-import { createLocation, getAllLocations } from "../api-client/location";
+import {
+  deleteLocation,
+  pointData,
+  createLocation,
+  getAllLocations,
+} from "../api-client/location";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 import { useNavigate } from "react-router-dom";
@@ -128,9 +132,9 @@ const Location = () => {
           />
           <Marker
             position={markerPosition}
-            draggable={true}
             eventHandlers={{ dragend: handleMarkerDragEnd }}
             zIndexOffset={1000}
+            draggable={true}
           >
             <Popup>
               <div>
