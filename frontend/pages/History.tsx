@@ -15,27 +15,6 @@ const History = () => {
     dispatch({ type: "SET_NEWLY_SELECTED_MUSIC_ID", payload: index }); // 再生中の音楽のIDを設定
     stop();
   };
-  /*   return (
-    <div>
-      
-      <ul id="resultList" className="leftAlign">
-        {historyID.length === 0 ? (
-          <li className="left-align">履歴がありません</li>
-        ) : (
-          historyID.map((resultIndex) => (
-            <li key={resultIndex} className="left-top-align">
-              <span>{musicData[resultIndex].title}</span>
-              <button onClick={() => handleButtonClick(resultIndex)}>
-                選択
-              </button>
-            </li>
-          ))
-        )}
-      </ul>
-      
-    </div>
-  );
-}; */
   return (
     <div>
       <Header />
